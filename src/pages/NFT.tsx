@@ -1,10 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Search, Filter, Heart, ExternalLink, TrendingUp } from "lucide-react";
+import { Search, Filter, Heart } from "lucide-react";
 import { useState } from "react";
-import { useAuth } from "@/contexts/AuthContext";
-import { useWallet } from "@/contexts/WalletContext";
-import { usePrices } from "@/contexts/PriceContext";
-import { toast } from "sonner";
 
 const collections = [
   { name: "Korypto Apes", floor: "2.4 ETH", volume: "12,400 ETH", items: 10000, change: "+12.5%", img: "🐵" },
@@ -144,9 +139,9 @@ const NFT = () => {
                     <div className="text-xs text-gray-500">Price</div>
                     <div className="text-sm font-bold text-[#0ecb81]">{nft.price}</div>
                   </div>
-                  <Button size="sm" className="brand-gradient text-black text-xs font-semibold">
-                    Buy <ExternalLink className="w-3 h-3 ml-1" />
-                  </Button>
+                  <span className="px-3 py-1.5 rounded-lg bg-[#3b82f6]/10 text-[#3b82f6] text-xs font-semibold">
+                    Coming Soon
+                  </span>
                 </div>
               </div>
             </div>

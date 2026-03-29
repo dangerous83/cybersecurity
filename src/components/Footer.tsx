@@ -2,53 +2,20 @@ import { Link } from "react-router-dom";
 
 const footerSections = [
   {
-    title: "About",
-    links: [
-      { label: "About KORYPTO", href: "/about" },
-      { label: "Careers", href: "#" },
-      { label: "Press", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Community", href: "#" },
-    ],
-  },
-  {
     title: "Products",
     links: [
       { label: "Exchange", href: "/trade" },
       { label: "Futures", href: "/futures" },
       { label: "Earn", href: "/earn" },
       { label: "NFT", href: "/nft" },
-      { label: "Launchpad", href: "#" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { label: "Buy Crypto", href: "#" },
-      { label: "P2P Trading", href: "#" },
       { label: "Convert", href: "/convert" },
-      { label: "Institutional", href: "#" },
-      { label: "API", href: "#" },
     ],
   },
   {
-    title: "Support",
+    title: "Resources",
     links: [
-      { label: "Help Center", href: "#" },
-      { label: "Fee Schedule", href: "#" },
-      { label: "Trading Rules", href: "#" },
-      { label: "Contact Us", href: "#" },
-      { label: "Status", href: "#" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Use", href: "#" },
-      { label: "Cookie Policy", href: "#" },
-      { label: "Risk Warning", href: "#" },
-      { label: "Law Enforcement", href: "#" },
+      { label: "Markets", href: "/markets" },
+      { label: "Wallet", href: "/wallet" },
     ],
   },
 ];
@@ -71,12 +38,14 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               {["Twitter", "Telegram", "Discord", "Reddit"].map(social => (
-                <button
+                <a
                   key={social}
+                  href="#"
+                  title={`${social} - Coming Soon`}
                   className="w-8 h-8 rounded-full bg-[#1e1e22] flex items-center justify-center text-gray-400 hover:text-[#0ecb81] hover:bg-[#0ecb81]/10 transition-all text-xs font-bold"
                 >
                   {social[0]}
-                </button>
+                </a>
               ))}
             </div>
           </div>

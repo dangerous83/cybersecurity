@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Mail, Lock, User, Shield, Check, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -10,7 +11,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [referral, setReferral] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,6 +32,7 @@ const Register = () => {
 
     if (!name.trim()) { setError("Please enter your name"); return; }
     if (!email.trim()) { setError("Please enter your email"); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError("Please enter a valid email address"); return; }
     if (!allChecksMet) { setError("Password does not meet all requirements"); return; }
     if (password !== confirmPassword) { setError("Passwords do not match"); return; }
     if (!agreed) { setError("Please agree to the Terms of Service"); return; }
@@ -40,6 +41,7 @@ const Register = () => {
     setTimeout(() => {
       const result = register(email, password, name);
       if (result.success) {
+        toast.success("Account created successfully! Welcome to KORYPTO.");
         navigate("/trade");
       } else {
         setError(result.error || "Registration failed");
@@ -143,20 +145,6 @@ const Register = () => {
             {confirmPassword && password !== confirmPassword && (
               <p className="text-[10px] text-[#f6465d]">Passwords do not match</p>
             )}
-          </div>
-
-          <div className="space-y-1.5">
-            <label className="text-sm text-gray-400">Referral Code (Optional)</label>
-            <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-              <input
-                type="text"
-                value={referral}
-                onChange={e => setReferral(e.target.value)}
-                placeholder="Enter referral code"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
-              />
-            </div>
           </div>
 
           <label className="flex items-start gap-2 text-xs text-gray-400 cursor-pointer">

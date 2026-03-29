@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Menu, X, ChevronDown, Search, Bell, User, Wallet,
-  Globe, Moon, LogOut, ClipboardList, Settings, ArrowLeftRight
+  LogOut, ClipboardList, ArrowLeftRight
 } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useWallet } from "@/contexts/WalletContext";
@@ -189,9 +189,6 @@ const Navbar = () => {
                         <Link to="/trade" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white">
                           <ClipboardList className="w-4 h-4" /> Orders
                         </Link>
-                        <button className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white w-full text-left">
-                          <Settings className="w-4 h-4" /> Settings
-                        </button>
                       </div>
                       <div className="border-t border-[#2a2a2e] py-1">
                         <button
@@ -210,12 +207,6 @@ const Navbar = () => {
                 </button>
               )}
 
-              <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
-                <Globe className="w-4 h-4" />
-              </button>
-              <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
-                <Moon className="w-4 h-4" />
-              </button>
             </div>
           </div>
 

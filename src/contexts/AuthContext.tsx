@@ -24,7 +24,7 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 const DEMO_ACCOUNTS = [
-  { id: 'demo-1', email: 'demo@korypto.com', password: 'Demo1234!', name: 'Demo Trader', createdAt: '2024-01-15T00:00:00Z' },
+  { id: 'demo-1', email: 'demo@korypto.com', password: 'demo123456', name: 'Demo Trader', createdAt: '2024-01-15T00:00:00Z' },
   { id: 'demo-2', email: 'alice@korypto.com', password: 'Alice1234!', name: 'Alice Chen', createdAt: '2024-03-20T00:00:00Z' },
 ];
 

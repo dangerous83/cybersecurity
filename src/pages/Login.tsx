@@ -1,17 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Eye, EyeOff, Mail, Lock, Shield, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
+
+const REMEMBER_KEY = 'korypto_remember';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(REMEMBER_KEY);
+      if (saved) {
+        const { email: savedEmail } = JSON.parse(saved);
+        if (savedEmail) {
+          setEmail(savedEmail);
+          setRememberMe(true);
+        }
+      }
+    } catch {}
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +36,10 @@ const Login = () => {
 
     if (!email.trim()) {
       setError("Please enter your email address");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address");
       return;
     }
     if (!password) {
@@ -30,6 +51,12 @@ const Login = () => {
     setTimeout(() => {
       const result = login(email, password);
       if (result.success) {
+        if (rememberMe) {
+          localStorage.setItem(REMEMBER_KEY, JSON.stringify({ email }));
+        } else {
+          localStorage.removeItem(REMEMBER_KEY);
+        }
+        toast.success("Welcome back!");
         navigate("/trade");
       } else {
         setError(result.error || "Login failed");
@@ -97,10 +124,9 @@ const Login = () => {
 
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 text-gray-400 cursor-pointer">
-              <input type="checkbox" className="rounded border-gray-600 accent-[#0ecb81]" />
+              <input type="checkbox" checked={rememberMe} onChange={e => setRememberMe(e.target.checked)} className="rounded border-gray-600 accent-[#0ecb81]" />
               Remember me
             </label>
-            <Link to="#" className="text-[#0ecb81] hover:underline">Forgot password?</Link>
           </div>
 
           <Button
@@ -111,28 +137,16 @@ const Login = () => {
             {loading ? "Logging in..." : "Log In"}
           </Button>
 
-          <div className="bg-[#1a1a1e] rounded-lg p-3 text-xs text-gray-400">
-            <p className="font-medium text-gray-300 mb-1">Demo Accounts:</p>
-            <p>demo@korypto.com / Demo1234!</p>
-            <p>alice@korypto.com / Alice1234!</p>
-          </div>
-
-          <div className="relative py-2">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-[#1a1a1e]" />
+          <div className="bg-[#0ecb81]/5 border border-[#0ecb81]/20 rounded-lg p-3 text-xs text-gray-400">
+            <p className="font-semibold text-[#0ecb81] mb-1.5">Demo Account Credentials</p>
+            <div className="space-y-1">
+              <p><span className="text-gray-300">Email:</span> demo@korypto.com</p>
+              <p><span className="text-gray-300">Password:</span> demo123456</p>
             </div>
-            <div className="relative flex justify-center text-xs">
-              <span className="bg-[#0d0d10] px-3 text-gray-500">Or continue with</span>
+            <div className="border-t border-[#0ecb81]/10 mt-2 pt-2">
+              <p><span className="text-gray-300">Email:</span> alice@korypto.com</p>
+              <p><span className="text-gray-300">Password:</span> Alice1234!</p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            <Button type="button" variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5">
-              Google
-            </Button>
-            <Button type="button" variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5">
-              Apple
-            </Button>
           </div>
 
           <div className="flex items-center gap-2 text-xs text-gray-500 pt-2">

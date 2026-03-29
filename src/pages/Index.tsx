@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight, Shield, Zap, Globe, TrendingUp, Users, Lock,
-  BarChart3, Wallet, ArrowUpRight, ChevronRight, Smartphone, Download
+  BarChart3, Wallet, ArrowUpRight, ChevronRight
 } from "lucide-react";
 import { usePrices } from "@/contexts/PriceContext";
 import { formatPrice, formatVolume } from "@/lib/crypto-data";
@@ -266,44 +266,6 @@ const Index = () => {
                 Create Free Account <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Download App CTA */}
-      <section className="py-16 border-t border-[#1a1a1e] bg-[#0a0a0d]">
-        <div className="max-w-[1600px] mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-4">Trade Anywhere, Anytime</h2>
-              <p className="text-gray-400 mb-6">
-                Download the KORYPTO app and take your trading to the next level. Available on iOS, Android, and Desktop.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
-                  <Download className="w-4 h-4" /> App Store
-                </Button>
-                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
-                  <Download className="w-4 h-4" /> Google Play
-                </Button>
-                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
-                  <Download className="w-4 h-4" /> Desktop
-                </Button>
-              </div>
-              <div className="flex items-center gap-6 mt-8 text-sm text-gray-400">
-                <span className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#0ecb81]" /> 50M+ Downloads</span>
-                <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0ecb81]" /> 4.8 Rating</span>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="w-64 h-[500px] bg-gradient-to-br from-[#14151a] to-[#1a1a2e] rounded-3xl border border-[#2a2a2e] flex items-center justify-center glow-brand">
-                <div className="text-center">
-                  <div className="w-16 h-16 brand-gradient rounded-2xl flex items-center justify-center font-black text-black text-2xl mx-auto mb-4">K</div>
-                  <p className="text-white font-bold text-lg">KORYPTO</p>
-                  <p className="text-gray-500 text-xs mt-1">Mobile App</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
