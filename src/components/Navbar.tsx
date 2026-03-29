@@ -28,6 +28,7 @@ const Navbar = () => {
     { label: "Futures", href: "/futures" },
     { label: "Earn", href: "/earn" },
     { label: "NFT", href: "/nft" },
+    { label: "White Label", href: "/white-label" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

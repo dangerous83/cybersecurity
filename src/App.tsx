@@ -25,6 +25,7 @@ import Fees from "./pages/Fees";
 import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
 import RiskWarning from "./pages/legal/RiskWarning";
+import WhiteLabel from "./pages/WhiteLabel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
                   <Route path="/risk-warning" element={<RiskWarning />} />
+                  <Route path="/white-label" element={<WhiteLabel />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>

@@ -25,6 +25,7 @@ const footerSections = [
       { label: "Markets", href: "/markets" },
       { label: "Wallet", href: "/wallet" },
       { label: "Fee Schedule", href: "/fees" },
+      { label: "White Label", href: "/white-label" },
     ],
   },
   {
