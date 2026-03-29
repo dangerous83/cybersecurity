@@ -2,6 +2,14 @@ import { Link } from "react-router-dom";
 
 const footerSections = [
   {
+    title: "About",
+    links: [
+      { label: "About KORYPTO", href: "/about" },
+      { label: "Careers", href: "/careers" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
+  {
     title: "Products",
     links: [
       { label: "Exchange", href: "/trade" },
@@ -12,10 +20,25 @@ const footerSections = [
     ],
   },
   {
-    title: "Resources",
+    title: "Services",
     links: [
       { label: "Markets", href: "/markets" },
       { label: "Wallet", href: "/wallet" },
+      { label: "Fee Schedule", href: "/fees" },
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      { label: "Help Center", href: "/help" },
+      { label: "Risk Warning", href: "/risk-warning" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Service", href: "/terms" },
     ],
   },
 ];
@@ -36,18 +59,11 @@ const Footer = () => {
             <p className="text-gray-500 text-sm mb-4">
               The world's leading cryptocurrency exchange platform.
             </p>
-            <div className="flex gap-3">
-              {["Twitter", "Telegram", "Discord", "Reddit"].map(social => (
-                <a
-                  key={social}
-                  href="#"
-                  title={`${social} - Coming Soon`}
-                  className="w-8 h-8 rounded-full bg-[#1e1e22] flex items-center justify-center text-gray-400 hover:text-[#0ecb81] hover:bg-[#0ecb81]/10 transition-all text-xs font-bold"
-                >
-                  {social[0]}
-                </a>
-              ))}
-            </div>
+            <p className="text-gray-600 text-xs">
+              KORYPTO Pte. Ltd.<br />
+              1 Raffles Place, #20-61<br />
+              Singapore 048616
+            </p>
           </div>
 
           {footerSections.map(section => (

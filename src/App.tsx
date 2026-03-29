@@ -17,6 +17,14 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Wallet from "./pages/Wallet";
 import Convert from "./pages/Convert";
+import About from "./pages/About";
+import Careers from "./pages/Careers";
+import Blog from "./pages/Blog";
+import HelpCenter from "./pages/HelpCenter";
+import Fees from "./pages/Fees";
+import Privacy from "./pages/legal/Privacy";
+import Terms from "./pages/legal/Terms";
+import RiskWarning from "./pages/legal/RiskWarning";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +50,14 @@ const App = () => (
                   <Route path="/register" element={<Register />} />
                   <Route path="/wallet" element={<Wallet />} />
                   <Route path="/convert" element={<Convert />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/careers" element={<Careers />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/help" element={<HelpCenter />} />
+                  <Route path="/fees" element={<Fees />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/terms" element={<Terms />} />
+                  <Route path="/risk-warning" element={<RiskWarning />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>
