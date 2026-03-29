@@ -26,7 +26,7 @@ const footerSections = [
     links: [
       { label: "Buy Crypto", href: "#" },
       { label: "P2P Trading", href: "#" },
-      { label: "Convert", href: "#" },
+      { label: "Convert", href: "/convert" },
       { label: "Institutional", href: "#" },
       { label: "API", href: "#" },
     ],

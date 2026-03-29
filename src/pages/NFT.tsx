@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Search, Filter, Heart, ExternalLink } from "lucide-react";
+import { Search, Filter, Heart, ExternalLink, TrendingUp } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useWallet } from "@/contexts/WalletContext";
+import { usePrices } from "@/contexts/PriceContext";
+import { toast } from "sonner";
 
 const collections = [
   { name: "Korypto Apes", floor: "2.4 ETH", volume: "12,400 ETH", items: 10000, change: "+12.5%", img: "🐵" },

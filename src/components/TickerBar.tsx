@@ -1,8 +1,8 @@
-import { useLivePrices } from "@/hooks/useLivePrices";
+import { usePrices } from "@/contexts/PriceContext";
 import { formatPrice } from "@/lib/crypto-data";
 
 const TickerBar = () => {
-  const assets = useLivePrices();
+  const { assets } = usePrices();
 
   return (
     <div className="bg-[#0d0d10] border-b border-[#1a1a1e] overflow-hidden">

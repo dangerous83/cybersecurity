@@ -82,9 +82,81 @@ export const cryptoAssets: CryptoAsset[] = [
   {
     id: "shiba-inu", symbol: "SHIB", name: "Shiba Inu", price: 0.0000242, change24h: 0.0000018,
     changePercent24h: 8.04, high24h: 0.0000248, low24h: 0.0000220, volume24h: 1_400_000_000,
-    marketCap: 14_200_000_000, icon: "🐕", sparkline: generateSparkline(0.0000242, 0.0000003),
+    marketCap: 14_200_000_000, icon: "S", sparkline: generateSparkline(0.0000242, 0.0000003),
+  },
+  {
+    id: "polygon", symbol: "MATIC", name: "Polygon", price: 0.89, change24h: 0.04,
+    changePercent24h: 4.71, high24h: 0.92, low24h: 0.84, volume24h: 540_000_000,
+    marketCap: 8_900_000_000, icon: "P", sparkline: generateSparkline(0.89, 0.02),
+  },
+  {
+    id: "litecoin", symbol: "LTC", name: "Litecoin", price: 92.14, change24h: 1.87,
+    changePercent24h: 2.07, high24h: 93.50, low24h: 89.80, volume24h: 480_000_000,
+    marketCap: 6_800_000_000, icon: "L", sparkline: generateSparkline(92.14, 1.5),
+  },
+  {
+    id: "uniswap", symbol: "UNI", name: "Uniswap", price: 12.34, change24h: -0.42,
+    changePercent24h: -3.30, high24h: 12.90, low24h: 12.10, volume24h: 320_000_000,
+    marketCap: 7_400_000_000, icon: "U", sparkline: generateSparkline(12.34, 0.25),
+  },
+  {
+    id: "cosmos", symbol: "ATOM", name: "Cosmos", price: 9.18, change24h: 0.31,
+    changePercent24h: 3.49, high24h: 9.40, low24h: 8.75, volume24h: 210_000_000,
+    marketCap: 3_600_000_000, icon: "A", sparkline: generateSparkline(9.18, 0.2),
+  },
+  {
+    id: "near", symbol: "NEAR", name: "NEAR Protocol", price: 5.24, change24h: 0.28,
+    changePercent24h: 5.64, high24h: 5.40, low24h: 4.90, volume24h: 380_000_000,
+    marketCap: 5_800_000_000, icon: "N", sparkline: generateSparkline(5.24, 0.12),
+  },
+  {
+    id: "aptos", symbol: "APT", name: "Aptos", price: 11.42, change24h: -0.38,
+    changePercent24h: -3.22, high24h: 11.90, low24h: 11.20, volume24h: 290_000_000,
+    marketCap: 4_900_000_000, icon: "A", sparkline: generateSparkline(11.42, 0.25),
+  },
+  {
+    id: "arbitrum", symbol: "ARB", name: "Arbitrum", price: 1.28, change24h: 0.06,
+    changePercent24h: 4.92, high24h: 1.32, low24h: 1.20, volume24h: 420_000_000,
+    marketCap: 4_200_000_000, icon: "A", sparkline: generateSparkline(1.28, 0.03),
+  },
+  {
+    id: "filecoin", symbol: "FIL", name: "Filecoin", price: 6.12, change24h: -0.22,
+    changePercent24h: -3.47, high24h: 6.40, low24h: 5.95, volume24h: 180_000_000,
+    marketCap: 3_400_000_000, icon: "F", sparkline: generateSparkline(6.12, 0.14),
+  },
+  {
+    id: "optimism", symbol: "OP", name: "Optimism", price: 2.78, change24h: 0.14,
+    changePercent24h: 5.30, high24h: 2.85, low24h: 2.60, volume24h: 310_000_000,
+    marketCap: 3_100_000_000, icon: "O", sparkline: generateSparkline(2.78, 0.06),
+  },
+  {
+    id: "injective", symbol: "INJ", name: "Injective", price: 24.56, change24h: 1.82,
+    changePercent24h: 8.01, high24h: 25.10, low24h: 22.40, volume24h: 260_000_000,
+    marketCap: 2_300_000_000, icon: "I", sparkline: generateSparkline(24.56, 0.6),
+  },
+  {
+    id: "sui", symbol: "SUI", name: "Sui", price: 1.52, change24h: 0.09,
+    changePercent24h: 6.29, high24h: 1.58, low24h: 1.40, volume24h: 340_000_000,
+    marketCap: 4_700_000_000, icon: "S", sparkline: generateSparkline(1.52, 0.04),
+  },
+  {
+    id: "render", symbol: "RNDR", name: "Render", price: 8.34, change24h: 0.52,
+    changePercent24h: 6.65, high24h: 8.50, low24h: 7.70, volume24h: 220_000_000,
+    marketCap: 3_200_000_000, icon: "R", sparkline: generateSparkline(8.34, 0.2),
   },
 ];
+
+export const getAssetBySymbol = (symbol: string): CryptoAsset | undefined => {
+  return cryptoAssets.find(a => a.symbol === symbol);
+};
+
+export const getAllSymbols = (): string[] => {
+  return cryptoAssets.map(a => a.symbol);
+};
+
+export const getTradingPair = (symbol: string): string => {
+  return `${symbol}/USDT`;
+};
 
 export interface OrderBookEntry {
   price: number;
@@ -154,3 +226,18 @@ export const formatMarketCap = (cap: number): string => {
   if (cap >= 1_000_000_000) return '$' + (cap / 1_000_000_000).toFixed(2) + 'B';
   return '$' + (cap / 1_000_000).toFixed(2) + 'M';
 };
+
+export const STAKING_PRODUCTS = [
+  { id: 'flex-btc', asset: 'BTC', type: 'Flexible' as const, apy: 3.2, minAmount: 0.001, lockDays: 0 },
+  { id: 'flex-eth', asset: 'ETH', type: 'Flexible' as const, apy: 4.1, minAmount: 0.01, lockDays: 0 },
+  { id: 'flex-sol', asset: 'SOL', type: 'Flexible' as const, apy: 5.8, minAmount: 0.1, lockDays: 0 },
+  { id: 'lock-btc-30', asset: 'BTC', type: 'Locked' as const, apy: 6.5, minAmount: 0.001, lockDays: 30 },
+  { id: 'lock-eth-30', asset: 'ETH', type: 'Locked' as const, apy: 8.2, minAmount: 0.01, lockDays: 30 },
+  { id: 'lock-sol-60', asset: 'SOL', type: 'Locked' as const, apy: 12.5, minAmount: 0.1, lockDays: 60 },
+  { id: 'lock-bnb-30', asset: 'BNB', type: 'Locked' as const, apy: 7.8, minAmount: 0.01, lockDays: 30 },
+  { id: 'lock-ada-90', asset: 'ADA', type: 'Locked' as const, apy: 14.2, minAmount: 10, lockDays: 90 },
+  { id: 'defi-eth', asset: 'ETH', type: 'DeFi' as const, apy: 18.5, minAmount: 0.1, lockDays: 0 },
+  { id: 'defi-matic', asset: 'MATIC', type: 'DeFi' as const, apy: 22.0, minAmount: 50, lockDays: 0 },
+  { id: 'defi-dot', asset: 'DOT', type: 'DeFi' as const, apy: 15.8, minAmount: 5, lockDays: 0 },
+  { id: 'lock-link-60', asset: 'LINK', type: 'Locked' as const, apy: 10.5, minAmount: 1, lockDays: 60 },
+];

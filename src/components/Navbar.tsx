@@ -1,14 +1,26 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Menu, X, ChevronDown, Search, Bell, User, Wallet,
-  Globe, Moon
+  Globe, Moon, LogOut, ClipboardList, Settings, ArrowLeftRight
 } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useWallet } from "@/contexts/WalletContext";
+import { usePrices } from "@/contexts/PriceContext";
+import { formatPrice } from "@/lib/crypto-data";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [notifOpen, setNotifOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, isAuthenticated, logout } = useAuth();
+  const { getBalance, getPortfolioValue } = useWallet();
+  const { getPrice } = usePrices();
+  const userMenuRef = useRef<HTMLDivElement>(null);
+  const notifRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
     { label: "Exchange", href: "/trade" },
@@ -19,6 +31,23 @@ const Navbar = () => {
   ];
 
   const isActive = (href: string) => location.pathname === href;
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target as Node)) setUserMenuOpen(false);
+      if (notifRef.current && !notifRef.current.contains(e.target as Node)) setNotifOpen(false);
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const portfolioValue = isAuthenticated ? getPortfolioValue(getPrice) : 0;
+
+  const handleLogout = () => {
+    logout();
+    setUserMenuOpen(false);
+    navigate('/');
+  };
 
   return (
     <nav className="sticky top-0 z-50 glass-dark border-b border-[#2a2a2e]">
@@ -47,9 +76,30 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <button className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white flex items-center gap-1">
-              More <ChevronDown className="w-3 h-3" />
-            </button>
+            {isAuthenticated && (
+              <>
+                <Link
+                  to="/wallet"
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    isActive("/wallet")
+                      ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  Wallet
+                </Link>
+                <Link
+                  to="/convert"
+                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                    isActive("/convert")
+                      ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  Convert
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Search Bar */}
@@ -66,27 +116,100 @@ const Navbar = () => {
 
           {/* Right Side */}
           <div className="hidden lg:flex items-center gap-2">
-            <Link to="/login">
-              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white">
-                Log In
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button size="sm" className="brand-gradient text-black font-semibold hover:opacity-90">
-                Register
-              </Button>
-            </Link>
+            {!isAuthenticated ? (
+              <>
+                <Link to="/login">
+                  <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white">
+                    Log In
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button size="sm" className="brand-gradient text-black font-semibold hover:opacity-90">
+                    Register
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                {/* Balance Preview */}
+                <Link to="/wallet" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a1a1e] hover:bg-[#222] transition-colors">
+                  <Wallet className="w-4 h-4 text-[#0ecb81]" />
+                  <span className="text-sm text-white font-medium">${formatPrice(portfolioValue)}</span>
+                </Link>
+              </>
+            )}
+
             <div className="flex items-center gap-1 ml-2 border-l border-[#2a2a2e] pl-2">
-              <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
-                <Wallet className="w-4 h-4" />
-              </button>
-              <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5 relative">
-                <Bell className="w-4 h-4" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-[#3b82f6] rounded-full" />
-              </button>
-              <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
-                <User className="w-4 h-4" />
-              </button>
+              {/* Notifications */}
+              <div className="relative" ref={notifRef}>
+                <button
+                  className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5 relative"
+                  onClick={() => setNotifOpen(!notifOpen)}
+                >
+                  <Bell className="w-4 h-4" />
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-[#3b82f6] rounded-full" />
+                </button>
+                {notifOpen && (
+                  <div className="absolute right-0 top-full mt-2 w-72 bg-[#14151a] border border-[#2a2a2e] rounded-xl shadow-xl z-50 overflow-hidden">
+                    <div className="p-3 border-b border-[#2a2a2e]">
+                      <h4 className="text-sm font-semibold text-white">Notifications</h4>
+                    </div>
+                    <div className="p-4 text-center text-sm text-gray-500">
+                      No new notifications
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* User Menu */}
+              {isAuthenticated ? (
+                <div className="relative" ref={userMenuRef}>
+                  <button
+                    className="flex items-center gap-2 p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5"
+                    onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  >
+                    <div className="w-6 h-6 rounded-full brand-gradient flex items-center justify-center text-[10px] font-bold text-black">
+                      {user?.name?.charAt(0).toUpperCase()}
+                    </div>
+                    <ChevronDown className="w-3 h-3" />
+                  </button>
+                  {userMenuOpen && (
+                    <div className="absolute right-0 top-full mt-2 w-56 bg-[#14151a] border border-[#2a2a2e] rounded-xl shadow-xl z-50 overflow-hidden">
+                      <div className="p-3 border-b border-[#2a2a2e]">
+                        <p className="text-sm font-semibold text-white">{user?.name}</p>
+                        <p className="text-xs text-gray-500">{user?.email}</p>
+                      </div>
+                      <div className="py-1">
+                        <Link to="/wallet" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white">
+                          <Wallet className="w-4 h-4" /> Wallet
+                        </Link>
+                        <Link to="/convert" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white">
+                          <ArrowLeftRight className="w-4 h-4" /> Convert
+                        </Link>
+                        <Link to="/trade" onClick={() => setUserMenuOpen(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white">
+                          <ClipboardList className="w-4 h-4" /> Orders
+                        </Link>
+                        <button className="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-white/5 hover:text-white w-full text-left">
+                          <Settings className="w-4 h-4" /> Settings
+                        </button>
+                      </div>
+                      <div className="border-t border-[#2a2a2e] py-1">
+                        <button
+                          onClick={handleLogout}
+                          className="flex items-center gap-3 px-3 py-2 text-sm text-[#f6465d] hover:bg-[#f6465d]/10 w-full text-left"
+                        >
+                          <LogOut className="w-4 h-4" /> Logout
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
+                  <User className="w-4 h-4" />
+                </button>
+              )}
+
               <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
                 <Globe className="w-4 h-4" />
               </button>
@@ -133,17 +256,40 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            {isAuthenticated && (
+              <>
+                <Link to="/wallet" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:text-white hover:bg-white/5">
+                  Wallet
+                </Link>
+                <Link to="/convert" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium rounded-lg text-gray-300 hover:text-white hover:bg-white/5">
+                  Convert
+                </Link>
+              </>
+            )}
             <div className="flex gap-2 pt-3 border-t border-[#2a2a2e]">
-              <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button variant="outline" className="w-full border-[#0ecb81] text-[#0ecb81]">
-                  Log In
-                </Button>
-              </Link>
-              <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full brand-gradient text-black font-semibold">
-                  Register
-                </Button>
-              </Link>
+              {!isAuthenticated ? (
+                <>
+                  <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
+                    <Button variant="outline" className="w-full border-[#0ecb81] text-[#0ecb81]">
+                      Log In
+                    </Button>
+                  </Link>
+                  <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
+                    <Button className="w-full brand-gradient text-black font-semibold">
+                      Register
+                    </Button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div className="flex-1 text-center text-sm text-gray-300 py-2">
+                    {user?.name} - ${formatPrice(portfolioValue)}
+                  </div>
+                  <Button variant="outline" className="border-[#f6465d] text-[#f6465d]" onClick={() => { handleLogout(); setMobileOpen(false); }}>
+                    Logout
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>

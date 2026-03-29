@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight, Shield, Zap, Globe, TrendingUp, Users, Lock,
-  BarChart3, Wallet, ArrowUpRight, ChevronRight
+  BarChart3, Wallet, ArrowUpRight, ChevronRight, Smartphone, Download
 } from "lucide-react";
-import { useLivePrices } from "@/hooks/useLivePrices";
+import { usePrices } from "@/contexts/PriceContext";
 import { formatPrice, formatVolume } from "@/lib/crypto-data";
 import MarketTable from "@/components/MarketTable";
 import MiniChart from "@/components/MiniChart";
@@ -40,17 +40,18 @@ const features = [
 ];
 
 const Index = () => {
-  const assets = useLivePrices();
+  const { assets } = usePrices();
   const topMovers = [...assets].sort((a, b) => Math.abs(b.changePercent24h) - Math.abs(a.changePercent24h)).slice(0, 4);
+  const topGainers = [...assets].sort((a, b) => b.changePercent24h - a.changePercent24h).slice(0, 3);
+  const topLosers = [...assets].sort((a, b) => a.changePercent24h - b.changePercent24h).slice(0, 3);
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d10] via-[#14151a] to-[#0d0d10]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#0ecb81]/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0ecb81]/3 blur-[100px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#3b82f6]/5 blur-[100px] rounded-full" />
 
         <div className="relative max-w-[1600px] mx-auto px-4 pt-16 pb-20 lg:pt-24 lg:pb-28">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -140,6 +141,58 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Live Ticker - Gainers & Losers */}
+      <section className="py-12 border-t border-[#1a1a1e]">
+        <div className="max-w-[1600px] mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl p-5">
+              <h3 className="text-sm font-semibold text-[#0ecb81] mb-4 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4" /> Top Gainers (24h)
+              </h3>
+              <div className="space-y-3">
+                {topGainers.map(asset => (
+                  <Link key={asset.id} to={`/trade?pair=${asset.symbol}`} className="flex items-center justify-between hover:bg-white/5 rounded-lg p-2 -mx-2 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#1a1a1e] flex items-center justify-center text-sm font-bold text-[#0ecb81]">{asset.icon}</div>
+                      <div>
+                        <span className="font-medium text-white text-sm">{asset.symbol}</span>
+                        <span className="text-gray-500 text-xs ml-2">{asset.name}</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-white text-sm">${formatPrice(asset.price)}</div>
+                      <div className="text-[#0ecb81] text-xs">+{asset.changePercent24h.toFixed(2)}%</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl p-5">
+              <h3 className="text-sm font-semibold text-[#f6465d] mb-4 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 rotate-180" /> Top Losers (24h)
+              </h3>
+              <div className="space-y-3">
+                {topLosers.map(asset => (
+                  <Link key={asset.id} to={`/trade?pair=${asset.symbol}`} className="flex items-center justify-between hover:bg-white/5 rounded-lg p-2 -mx-2 transition-colors">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-[#1a1a1e] flex items-center justify-center text-sm font-bold text-[#f6465d]">{asset.icon}</div>
+                      <div>
+                        <span className="font-medium text-white text-sm">{asset.symbol}</span>
+                        <span className="text-gray-500 text-xs ml-2">{asset.name}</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-white text-sm">${formatPrice(asset.price)}</div>
+                      <div className="text-[#f6465d] text-xs">{asset.changePercent24h.toFixed(2)}%</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Live Market Prices */}
       <section className="py-16 border-t border-[#1a1a1e]">
         <div className="max-w-[1600px] mx-auto px-4">
@@ -153,7 +206,7 @@ const Index = () => {
             </Link>
           </div>
           <div className="bg-[#0d0d10] rounded-2xl border border-[#1a1a1e] overflow-hidden">
-            <MarketTable assets={assets} />
+            <MarketTable assets={assets.slice(0, 10)} />
           </div>
         </div>
       </section>
@@ -184,9 +237,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0ecb81]/5 via-transparent to-[#0ecb81]/5" />
+      {/* How it works */}
+      <section className="py-20 relative overflow-hidden border-t border-[#1a1a1e]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0ecb81]/5 via-transparent to-[#3b82f6]/5" />
         <div className="relative max-w-[1600px] mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Start Trading in Minutes
@@ -194,26 +247,63 @@ const Index = () => {
           <p className="text-gray-400 mb-8 max-w-lg mx-auto">
             Create a free account, deposit funds, and begin trading 600+ cryptocurrencies with industry-leading security.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="grid sm:grid-cols-3 gap-8 mt-12 max-w-3xl mx-auto">
+            {[
+              { step: "01", title: "Create Account", desc: "Sign up with your email and get $10,000 demo balance instantly" },
+              { step: "02", title: "Choose Your Market", desc: "Browse 600+ cryptocurrencies across spot, futures, and earn products" },
+              { step: "03", title: "Start Trading", desc: "Execute trades with real-time pricing and professional tools" },
+            ].map(item => (
+              <div key={item.step} className="text-center">
+                <div className="text-4xl font-black brand-text mb-3">{item.step}</div>
+                <h3 className="font-semibold text-white text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
             <Link to="/register">
               <Button size="lg" className="brand-gradient text-black font-bold px-10 py-6 text-base">
                 Create Free Account <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
           </div>
-          {/* Steps */}
-          <div className="grid sm:grid-cols-3 gap-8 mt-16 max-w-3xl mx-auto">
-            {[
-              { step: "01", title: "Create Account", desc: "Sign up with your email and verify your identity" },
-              { step: "02", title: "Deposit Funds", desc: "Add crypto or fiat via bank transfer, card, or P2P" },
-              { step: "03", title: "Start Trading", desc: "Trade spot, futures, and more with ultra-low fees" },
-            ].map(item => (
-              <div key={item.step} className="text-center">
-                <div className="text-3xl font-black brand-text mb-2">{item.step}</div>
-                <h3 className="font-semibold text-white mb-1">{item.title}</h3>
-                <p className="text-sm text-gray-500">{item.desc}</p>
+        </div>
+      </section>
+
+      {/* Download App CTA */}
+      <section className="py-16 border-t border-[#1a1a1e] bg-[#0a0a0d]">
+        <div className="max-w-[1600px] mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-white mb-4">Trade Anywhere, Anytime</h2>
+              <p className="text-gray-400 mb-6">
+                Download the KORYPTO app and take your trading to the next level. Available on iOS, Android, and Desktop.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
+                  <Download className="w-4 h-4" /> App Store
+                </Button>
+                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
+                  <Download className="w-4 h-4" /> Google Play
+                </Button>
+                <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-white/5 gap-2">
+                  <Download className="w-4 h-4" /> Desktop
+                </Button>
               </div>
-            ))}
+              <div className="flex items-center gap-6 mt-8 text-sm text-gray-400">
+                <span className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#0ecb81]" /> 50M+ Downloads</span>
+                <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-[#0ecb81]" /> 4.8 Rating</span>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-64 h-[500px] bg-gradient-to-br from-[#14151a] to-[#1a1a2e] rounded-3xl border border-[#2a2a2e] flex items-center justify-center glow-brand">
+                <div className="text-center">
+                  <div className="w-16 h-16 brand-gradient rounded-2xl flex items-center justify-center font-black text-black text-2xl mx-auto mb-4">K</div>
+                  <p className="text-white font-bold text-lg">KORYPTO</p>
+                  <p className="text-gray-500 text-xs mt-1">Mobile App</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
