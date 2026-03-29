@@ -38,7 +38,7 @@ const Futures = () => {
                   onClick={() => setSelectedPair(a.symbol)}
                   className={`px-3 py-1.5 rounded-lg text-sm whitespace-nowrap ${
                     selectedPair === a.symbol
-                      ? "bg-[#f0b90b]/10 text-[#f0b90b] border border-[#f0b90b]/30"
+                      ? "bg-[#0ecb81]/10 text-[#0ecb81] border border-[#0ecb81]/30"
                       : "text-gray-400 hover:text-white"
                   }`}
                 >
@@ -47,7 +47,7 @@ const Futures = () => {
               ))}
             </div>
             <div className="flex items-center gap-4 md:ml-auto text-xs">
-              <div className="px-2 py-1 rounded bg-[#f0b90b]/10 text-[#f0b90b] font-semibold">
+              <div className="px-2 py-1 rounded bg-[#0ecb81]/10 text-[#0ecb81] font-semibold">
                 {leverage}x
               </div>
               <span className="text-gray-500">Mark: <span className="text-white">${formatPrice(asset.price * 1.001)}</span></span>
@@ -76,7 +76,7 @@ const Futures = () => {
             <div className="bg-[#0d0d10] rounded-xl border border-[#1a1a1e]">
               {/* Cross / Isolated */}
               <div className="flex border-b border-[#1a1a1e] text-xs">
-                <button className="flex-1 py-2.5 text-[#f0b90b] border-b-2 border-[#f0b90b] font-medium">Cross</button>
+                <button className="flex-1 py-2.5 text-[#0ecb81] border-b-2 border-[#0ecb81] font-medium">Cross</button>
                 <button className="flex-1 py-2.5 text-gray-400 hover:text-white">Isolated</button>
               </div>
 
@@ -84,7 +84,7 @@ const Futures = () => {
               <div className="p-4 border-b border-[#1a1a1e]">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-gray-500">Leverage</span>
-                  <span className="text-sm font-bold text-[#f0b90b]">{leverage}x</span>
+                  <span className="text-sm font-bold text-[#0ecb81]">{leverage}x</span>
                 </div>
                 <input
                   type="range"
@@ -92,7 +92,7 @@ const Futures = () => {
                   max={125}
                   value={leverage}
                   onChange={e => setLeverage(Number(e.target.value))}
-                  className="w-full h-1 bg-[#1a1a1e] rounded appearance-none cursor-pointer accent-[#f0b90b]"
+                  className="w-full h-1 bg-[#1a1a1e] rounded appearance-none cursor-pointer accent-[#0ecb81]"
                 />
                 <div className="flex justify-between mt-2 gap-1">
                   {leverages.map(l => (
@@ -100,7 +100,7 @@ const Futures = () => {
                       key={l}
                       onClick={() => setLeverage(l)}
                       className={`text-[10px] px-1.5 py-0.5 rounded ${
-                        leverage === l ? 'bg-[#f0b90b]/10 text-[#f0b90b]' : 'text-gray-500 hover:text-white'
+                        leverage === l ? 'bg-[#0ecb81]/10 text-[#0ecb81]' : 'text-gray-500 hover:text-white'
                       }`}
                     >
                       {l}x
@@ -142,7 +142,7 @@ const Futures = () => {
                     value={margin}
                     onChange={e => setMargin(e.target.value)}
                     placeholder="0.00"
-                    className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                    className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
                   />
                 </div>
 

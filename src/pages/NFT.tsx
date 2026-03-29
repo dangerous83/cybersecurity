@@ -38,10 +38,10 @@ const NFT = () => {
     <div className="min-h-screen bg-[#0b0b0e]">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[#1a1a1e]">
-        <div className="absolute top-0 right-1/4 w-[400px] h-[300px] bg-[#f0b90b]/5 blur-[100px] rounded-full" />
+        <div className="absolute top-0 right-1/4 w-[400px] h-[300px] bg-[#0ecb81]/5 blur-[100px] rounded-full" />
         <div className="relative max-w-[1600px] mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            KORYPTO <span className="gold-text">NFT Marketplace</span>
+            KORYPTO <span className="brand-text">NFT Marketplace</span>
           </h1>
           <p className="text-gray-400 max-w-xl mx-auto mb-8">
             Discover, collect, and trade extraordinary NFTs on the largest crypto marketplace.
@@ -53,7 +53,7 @@ const NFT = () => {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search collections, NFTs, or artists..."
-              className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-12 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+              className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-12 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
             />
           </div>
         </div>
@@ -63,7 +63,7 @@ const NFT = () => {
       <section className="max-w-[1600px] mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-white">Top Collections</h2>
-          <button className="flex items-center gap-1 text-sm text-gray-400 hover:text-[#f0b90b]">
+          <button className="flex items-center gap-1 text-sm text-gray-400 hover:text-[#0ecb81]">
             <Filter className="w-4 h-4" /> Filter
           </button>
         </div>
@@ -111,7 +111,7 @@ const NFT = () => {
           {nfts.map(nft => (
             <div
               key={nft.name}
-              className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl overflow-hidden hover:border-[#f0b90b]/20 transition-all group"
+              className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl overflow-hidden hover:border-[#0ecb81]/20 transition-all group"
             >
               {/* NFT Image */}
               <div className="aspect-square bg-gradient-to-br from-[#1a1a1e] to-[#14151a] flex items-center justify-center text-6xl relative">
@@ -124,7 +124,7 @@ const NFT = () => {
                 </button>
                 <span className={`absolute top-3 left-3 text-[10px] px-2 py-0.5 rounded-full font-medium ${
                   nft.rarity === 'Mythic' ? 'bg-purple-500/20 text-purple-400' :
-                  nft.rarity === 'Legendary' ? 'bg-[#f0b90b]/20 text-[#f0b90b]' :
+                  nft.rarity === 'Legendary' ? 'bg-[#0ecb81]/20 text-[#0ecb81]' :
                   nft.rarity === 'Ultra Rare' ? 'bg-red-500/20 text-red-400' :
                   nft.rarity === 'Epic' ? 'bg-blue-500/20 text-blue-400' :
                   'bg-green-500/20 text-green-400'
@@ -138,9 +138,9 @@ const NFT = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-xs text-gray-500">Price</div>
-                    <div className="text-sm font-bold text-[#f0b90b]">{nft.price}</div>
+                    <div className="text-sm font-bold text-[#0ecb81]">{nft.price}</div>
                   </div>
-                  <Button size="sm" className="gold-gradient text-black text-xs font-semibold">
+                  <Button size="sm" className="brand-gradient text-black text-xs font-semibold">
                     Buy <ExternalLink className="w-3 h-3 ml-1" />
                   </Button>
                 </div>

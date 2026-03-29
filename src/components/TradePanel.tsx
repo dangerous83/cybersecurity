@@ -51,7 +51,7 @@ const TradePanel = ({ symbol, price }: TradePanelProps) => {
               onClick={() => setOrderType(type)}
               className={`px-3 py-1 rounded-md capitalize transition-colors ${
                 orderType === type
-                  ? 'bg-[#f0b90b]/10 text-[#f0b90b]'
+                  ? 'bg-[#0ecb81]/10 text-[#0ecb81]'
                   : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -69,7 +69,7 @@ const TradePanel = ({ symbol, price }: TradePanelProps) => {
                 type="text"
                 value={limitPrice}
                 onChange={e => setLimitPrice(e.target.value)}
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#0ecb81]/50"
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">USDT</span>
             </div>
@@ -85,7 +85,7 @@ const TradePanel = ({ symbol, price }: TradePanelProps) => {
               value={amount}
               onChange={e => setAmount(e.target.value)}
               placeholder="0.00"
-              className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+              className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-500">{symbol}</span>
           </div>
@@ -99,7 +99,7 @@ const TradePanel = ({ symbol, price }: TradePanelProps) => {
             max={100}
             value={sliderValue}
             onChange={e => setSliderValue(Number(e.target.value))}
-            className="w-full h-1 bg-[#1a1a1e] rounded-lg appearance-none cursor-pointer accent-[#f0b90b]"
+            className="w-full h-1 bg-[#1a1a1e] rounded-lg appearance-none cursor-pointer accent-[#0ecb81]"
           />
           <div className="flex justify-between">
             {percentages.map(p => (
@@ -108,7 +108,7 @@ const TradePanel = ({ symbol, price }: TradePanelProps) => {
                 onClick={() => setSliderValue(p)}
                 className={`text-xs px-2 py-0.5 rounded transition-colors ${
                   sliderValue === p
-                    ? 'bg-[#f0b90b]/10 text-[#f0b90b]'
+                    ? 'bg-[#0ecb81]/10 text-[#0ecb81]'
                     : 'text-gray-500 hover:text-white'
                 }`}
               >

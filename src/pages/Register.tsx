@@ -22,10 +22,10 @@ const Register = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
+            <div className="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
               K
             </div>
-            <span className="text-2xl font-bold gold-text">KORYPTO</span>
+            <span className="text-2xl font-bold brand-text">KORYPTO</span>
           </Link>
           <h1 className="text-2xl font-bold text-white">Create Account</h1>
           <p className="text-gray-500 text-sm mt-1">Start trading crypto in minutes</p>
@@ -41,7 +41,7 @@ const Register = () => {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
           </div>
@@ -55,7 +55,7 @@ const Register = () => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="Create a strong password"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-12 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-12 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
@@ -84,7 +84,7 @@ const Register = () => {
                 value={confirmPassword}
                 onChange={e => setConfirmPassword(e.target.value)}
                 placeholder="Confirm your password"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
           </div>
@@ -98,17 +98,17 @@ const Register = () => {
                 value={referral}
                 onChange={e => setReferral(e.target.value)}
                 placeholder="Enter referral code"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
           </div>
 
           <label className="flex items-start gap-2 text-xs text-gray-400 cursor-pointer">
-            <input type="checkbox" className="rounded border-gray-600 mt-0.5 accent-[#f0b90b]" />
-            <span>I agree to the <Link to="#" className="text-[#f0b90b] hover:underline">Terms of Service</Link> and <Link to="#" className="text-[#f0b90b] hover:underline">Privacy Policy</Link></span>
+            <input type="checkbox" className="rounded border-gray-600 mt-0.5 accent-[#0ecb81]" />
+            <span>I agree to the <Link to="#" className="text-[#0ecb81] hover:underline">Terms of Service</Link> and <Link to="#" className="text-[#0ecb81] hover:underline">Privacy Policy</Link></span>
           </label>
 
-          <Button className="w-full gold-gradient text-black font-bold py-3">
+          <Button className="w-full brand-gradient text-black font-bold py-3">
             Create Account
           </Button>
 
@@ -120,7 +120,7 @@ const Register = () => {
 
         <p className="text-center text-sm text-gray-500 mt-6">
           Already have an account?{" "}
-          <Link to="/login" className="text-[#f0b90b] hover:underline font-medium">Log In</Link>
+          <Link to="/login" className="text-[#0ecb81] hover:underline font-medium">Log In</Link>
         </p>
       </div>
     </div>

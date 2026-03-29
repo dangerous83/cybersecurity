@@ -61,10 +61,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 gold-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
+              <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
                 K
               </div>
-              <span className="text-lg font-bold gold-text">KORYPTO</span>
+              <span className="text-lg font-bold brand-text font-heading">KORYPTO</span>
             </Link>
             <p className="text-gray-500 text-sm mb-4">
               The world's leading cryptocurrency exchange platform.
@@ -73,7 +73,7 @@ const Footer = () => {
               {["Twitter", "Telegram", "Discord", "Reddit"].map(social => (
                 <button
                   key={social}
-                  className="w-8 h-8 rounded-full bg-[#1e1e22] flex items-center justify-center text-gray-400 hover:text-[#f0b90b] hover:bg-[#f0b90b]/10 transition-all text-xs font-bold"
+                  className="w-8 h-8 rounded-full bg-[#1e1e22] flex items-center justify-center text-gray-400 hover:text-[#0ecb81] hover:bg-[#0ecb81]/10 transition-all text-xs font-bold"
                 >
                   {social[0]}
                 </button>
@@ -89,7 +89,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <Link
                       to={link.href}
-                      className="text-gray-500 hover:text-[#f0b90b] text-sm transition-colors"
+                      className="text-gray-500 hover:text-[#0ecb81] text-sm transition-colors"
                     >
                       {link.label}
                     </Link>

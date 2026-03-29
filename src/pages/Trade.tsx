@@ -34,7 +34,7 @@ const Trade = () => {
                   onClick={() => setSelectedPair(asset.symbol)}
                   className={`flex items-center gap-2 px-3 py-1.5 rounded-lg whitespace-nowrap text-sm transition-colors ${
                     selectedPair === asset.symbol
-                      ? "bg-[#f0b90b]/10 text-[#f0b90b] border border-[#f0b90b]/30"
+                      ? "bg-[#0ecb81]/10 text-[#0ecb81] border border-[#0ecb81]/30"
                       : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -94,13 +94,13 @@ const Trade = () => {
             <div className="bg-[#0d0d10] rounded-xl border border-[#1a1a1e]">
               <Tabs defaultValue="open-orders">
                 <TabsList className="bg-transparent border-b border-[#1a1a1e] rounded-none w-full justify-start px-4 h-auto">
-                  <TabsTrigger value="open-orders" className="data-[state=active]:text-[#f0b90b] data-[state=active]:border-b-2 data-[state=active]:border-[#f0b90b] rounded-none text-gray-500 text-sm py-3 px-4">
+                  <TabsTrigger value="open-orders" className="data-[state=active]:text-[#0ecb81] data-[state=active]:border-b-2 data-[state=active]:border-[#0ecb81] rounded-none text-gray-500 text-sm py-3 px-4">
                     <Clock className="w-3 h-3 mr-1" /> Open Orders (0)
                   </TabsTrigger>
-                  <TabsTrigger value="order-history" className="data-[state=active]:text-[#f0b90b] data-[state=active]:border-b-2 data-[state=active]:border-[#f0b90b] rounded-none text-gray-500 text-sm py-3 px-4">
+                  <TabsTrigger value="order-history" className="data-[state=active]:text-[#0ecb81] data-[state=active]:border-b-2 data-[state=active]:border-[#0ecb81] rounded-none text-gray-500 text-sm py-3 px-4">
                     <BarChart3 className="w-3 h-3 mr-1" /> Order History
                   </TabsTrigger>
-                  <TabsTrigger value="trade-history" className="data-[state=active]:text-[#f0b90b] data-[state=active]:border-b-2 data-[state=active]:border-[#f0b90b] rounded-none text-gray-500 text-sm py-3 px-4">
+                  <TabsTrigger value="trade-history" className="data-[state=active]:text-[#0ecb81] data-[state=active]:border-b-2 data-[state=active]:border-[#0ecb81] rounded-none text-gray-500 text-sm py-3 px-4">
                     Trade History
                   </TabsTrigger>
                 </TabsList>

@@ -67,7 +67,7 @@ const TradingChart = ({ symbol, basePrice, change }: TradingChartProps) => {
               onClick={() => setTimeframe(tf)}
               className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
                 timeframe === tf
-                  ? "bg-[#f0b90b] text-black"
+                  ? "bg-[#0ecb81] text-black"
                   : "text-gray-400 hover:text-white"
               }`}
             >
@@ -148,7 +148,7 @@ const TradingChart = ({ symbol, basePrice, change }: TradingChartProps) => {
             y1={priceToY(candles[candles.length - 1]?.close ?? basePrice)}
             x2={chartWidth}
             y2={priceToY(candles[candles.length - 1]?.close ?? basePrice)}
-            stroke="#f0b90b"
+            stroke="#0ecb81"
             strokeWidth="1"
             strokeDasharray="4,4"
           />

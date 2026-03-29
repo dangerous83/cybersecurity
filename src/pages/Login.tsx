@@ -13,10 +13,10 @@ const Login = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
+            <div className="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
               K
             </div>
-            <span className="text-2xl font-bold gold-text">KORYPTO</span>
+            <span className="text-2xl font-bold brand-text">KORYPTO</span>
           </Link>
           <h1 className="text-2xl font-bold text-white">Welcome Back</h1>
           <p className="text-gray-500 text-sm mt-1">Log in to your account to continue trading</p>
@@ -32,7 +32,7 @@ const Login = () => {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
           </div>
@@ -46,7 +46,7 @@ const Login = () => {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-12 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1a1a1e] border border-[#2a2a2e] rounded-xl pl-10 pr-12 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
@@ -59,13 +59,13 @@ const Login = () => {
 
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 text-gray-400 cursor-pointer">
-              <input type="checkbox" className="rounded border-gray-600 accent-[#f0b90b]" />
+              <input type="checkbox" className="rounded border-gray-600 accent-[#0ecb81]" />
               Remember me
             </label>
-            <Link to="#" className="text-[#f0b90b] hover:underline">Forgot password?</Link>
+            <Link to="#" className="text-[#0ecb81] hover:underline">Forgot password?</Link>
           </div>
 
-          <Button className="w-full gold-gradient text-black font-bold py-3">
+          <Button className="w-full brand-gradient text-black font-bold py-3">
             Log In
           </Button>
 
@@ -95,7 +95,7 @@ const Login = () => {
 
         <p className="text-center text-sm text-gray-500 mt-6">
           Don't have an account?{" "}
-          <Link to="/register" className="text-[#f0b90b] hover:underline font-medium">Register now</Link>
+          <Link to="/register" className="text-[#0ecb81] hover:underline font-medium">Register now</Link>
         </p>
       </div>
     </div>

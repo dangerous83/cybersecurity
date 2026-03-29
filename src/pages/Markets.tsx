@@ -61,7 +61,7 @@ const Markets = () => {
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 placeholder="Search by name or symbol..."
-                className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
             <div className="flex gap-1 overflow-x-auto">
@@ -71,7 +71,7 @@ const Markets = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-1.5 px-4 py-2 text-sm rounded-xl whitespace-nowrap transition-colors ${
                     activeTab === tab.id
-                      ? "bg-[#f0b90b]/10 text-[#f0b90b] border border-[#f0b90b]/30"
+                      ? "bg-[#0ecb81]/10 text-[#0ecb81] border border-[#0ecb81]/30"
                       : "text-gray-400 hover:text-white hover:bg-white/5 border border-transparent"
                   }`}
                 >

@@ -26,10 +26,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-8 h-8 gold-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
+            <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
               K
             </div>
-            <span className="text-xl font-bold gold-text hidden sm:block">KORYPTO</span>
+            <span className="text-xl font-bold brand-text hidden sm:block font-heading">KORYPTO</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -40,7 +40,7 @@ const Navbar = () => {
                 to={link.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   isActive(link.href)
-                    ? "text-[#f0b90b] bg-[#f0b90b]/10"
+                    ? "text-[#0ecb81] bg-[#3b82f6]/10"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -59,7 +59,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search coins..."
-                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#f0b90b]/50 transition-colors"
+                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#0ecb81]/50 transition-colors"
               />
             </div>
           </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
               </Button>
             </Link>
             <Link to="/register">
-              <Button size="sm" className="gold-gradient text-black font-semibold hover:opacity-90">
+              <Button size="sm" className="brand-gradient text-black font-semibold hover:opacity-90">
                 Register
               </Button>
             </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
               </button>
               <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5 relative">
                 <Bell className="w-4 h-4" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-[#f0b90b] rounded-full" />
+                <span className="absolute top-1 right-1 w-2 h-2 bg-[#3b82f6] rounded-full" />
               </button>
               <button className="p-2 text-gray-400 hover:text-white rounded-lg hover:bg-white/5">
                 <User className="w-4 h-4" />
@@ -116,7 +116,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search coins..."
-                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#f0b90b]/50"
+                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#0ecb81]/50"
               />
             </div>
             {navLinks.map(link => (
@@ -126,7 +126,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className={`block px-3 py-2.5 text-sm font-medium rounded-lg ${
                   isActive(link.href)
-                    ? "text-[#f0b90b] bg-[#f0b90b]/10"
+                    ? "text-[#0ecb81] bg-[#3b82f6]/10"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -135,12 +135,12 @@ const Navbar = () => {
             ))}
             <div className="flex gap-2 pt-3 border-t border-[#2a2a2e]">
               <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button variant="outline" className="w-full border-[#f0b90b] text-[#f0b90b]">
+                <Button variant="outline" className="w-full border-[#0ecb81] text-[#0ecb81]">
                   Log In
                 </Button>
               </Link>
               <Link to="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full gold-gradient text-black font-semibold">
+                <Button className="w-full brand-gradient text-black font-semibold">
                   Register
                 </Button>
               </Link>

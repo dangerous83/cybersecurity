@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,25 +7,25 @@
 @layer base {
   :root {
     --background: 0 0% 7%;
-    --foreground: 45 10% 90%;
+    --foreground: 200 10% 90%;
 
     --card: 0 0% 9%;
-    --card-foreground: 45 10% 90%;
+    --card-foreground: 200 10% 90%;
 
     --popover: 0 0% 9%;
-    --popover-foreground: 45 10% 90%;
+    --popover-foreground: 200 10% 90%;
 
-    --primary: 43 96% 56%;
+    --primary: 160 84% 39%;
     --primary-foreground: 0 0% 5%;
 
     --secondary: 0 0% 13%;
-    --secondary-foreground: 45 10% 90%;
+    --secondary-foreground: 200 10% 90%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 55%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 0 0% 5%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
@@ -35,18 +35,18 @@
 
     --border: 0 0% 16%;
     --input: 0 0% 16%;
-    --ring: 43 96% 56%;
+    --ring: 160 84% 39%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 45 10% 90%;
-    --sidebar-primary: 43 96% 56%;
+    --sidebar-foreground: 200 10% 90%;
+    --sidebar-primary: 160 84% 39%;
     --sidebar-primary-foreground: 0 0% 5%;
     --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 45 10% 90%;
+    --sidebar-accent-foreground: 200 10% 90%;
     --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 43 96% 56%;
+    --sidebar-ring: 160 84% 39%;
   }
 }
 
@@ -56,30 +56,38 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 }
 
 @layer utilities {
-  .gold-gradient {
-    background: linear-gradient(135deg, #f0b90b 0%, #d4a00a 50%, #f5d060 100%);
+  .font-heading {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 
-  .gold-text {
-    background: linear-gradient(135deg, #f0b90b 0%, #f5d060 50%, #f0b90b 100%);
+  .brand-gradient {
+    background: linear-gradient(135deg, #0ecb81 0%, #3b82f6 50%, #06b6d4 100%);
+  }
+
+  .brand-text {
+    background: linear-gradient(135deg, #0ecb81 0%, #3b82f6 50%, #06b6d4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gold-border {
-    border-color: #f0b90b;
+  .brand-border {
+    border-color: #0ecb81;
   }
 
   .card-dark {
     background: rgba(20, 21, 26, 0.95);
-    border: 1px solid rgba(240, 185, 11, 0.1);
+    border: 1px solid rgba(14, 203, 129, 0.1);
   }
 
   .glass-dark {
@@ -88,8 +96,8 @@
     -webkit-backdrop-filter: blur(20px);
   }
 
-  .glow-gold {
-    box-shadow: 0 0 20px rgba(240, 185, 11, 0.15);
+  .glow-brand {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(14, 203, 129, 0.08);
   }
 
   .ticker-scroll {

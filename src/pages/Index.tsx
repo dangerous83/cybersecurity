@@ -49,19 +49,19 @@ const Index = () => {
       <section className="relative overflow-hidden">
         {/* Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d0d10] via-[#14151a] to-[#0d0d10]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#f0b90b]/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#f0b90b]/3 blur-[100px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#0ecb81]/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#0ecb81]/3 blur-[100px] rounded-full" />
 
         <div className="relative max-w-[1600px] mx-auto px-4 pt-16 pb-20 lg:pt-24 lg:pb-28">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#f0b90b]/10 border border-[#f0b90b]/20 text-[#f0b90b] text-sm">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0ecb81]/10 border border-[#0ecb81]/20 text-[#0ecb81] text-sm">
                 <Zap className="w-4 h-4" />
                 The Future of Trading is Here
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] text-white">
                 Buy, Sell &<br />
-                <span className="gold-text">Trade Crypto</span><br />
+                <span className="brand-text">Trade Crypto</span><br />
                 with Confidence
               </h1>
               <p className="text-lg text-gray-400 max-w-lg">
@@ -70,7 +70,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link to="/register">
-                  <Button size="lg" className="gold-gradient text-black font-bold px-8 py-6 text-base hover:opacity-90">
+                  <Button size="lg" className="brand-gradient text-black font-bold px-8 py-6 text-base hover:opacity-90">
                     Get Started Free <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
@@ -84,7 +84,7 @@ const Index = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
                 {stats.map(stat => (
                   <div key={stat.label} className="space-y-1">
-                    <div className="flex items-center gap-1.5 text-[#f0b90b]">
+                    <div className="flex items-center gap-1.5 text-[#0ecb81]">
                       <stat.icon className="w-4 h-4" />
                       <span className="text-lg font-bold text-white">{stat.value}</span>
                     </div>
@@ -96,10 +96,10 @@ const Index = () => {
 
             {/* Hero Right - Top Movers Card */}
             <div className="hidden lg:block">
-              <div className="bg-[#14151a]/80 border border-[#1a1a1e] rounded-2xl p-6 backdrop-blur-xl glow-gold">
+              <div className="bg-[#14151a]/80 border border-[#1a1a1e] rounded-2xl p-6 backdrop-blur-xl glow-brand">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="font-semibold text-white">Top Movers</h3>
-                  <Link to="/markets" className="text-xs text-[#f0b90b] hover:underline flex items-center gap-1">
+                  <Link to="/markets" className="text-xs text-[#0ecb81] hover:underline flex items-center gap-1">
                     View All <ChevronRight className="w-3 h-3" />
                   </Link>
                 </div>
@@ -111,7 +111,7 @@ const Index = () => {
                       className="flex items-center justify-between p-3 rounded-xl hover:bg-white/5 transition-colors"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[#1a1a1e] flex items-center justify-center text-lg font-bold text-[#f0b90b]">
+                        <div className="w-10 h-10 rounded-full bg-[#1a1a1e] flex items-center justify-center text-lg font-bold text-[#0ecb81]">
                           {asset.icon}
                         </div>
                         <div>
@@ -148,7 +148,7 @@ const Index = () => {
               <h2 className="text-3xl font-bold text-white">Live Market Prices</h2>
               <p className="text-gray-500 mt-1">Real-time cryptocurrency prices with 24h stats</p>
             </div>
-            <Link to="/markets" className="text-[#f0b90b] text-sm font-medium hover:underline flex items-center gap-1">
+            <Link to="/markets" className="text-[#0ecb81] text-sm font-medium hover:underline flex items-center gap-1">
               See All Markets <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -171,10 +171,10 @@ const Index = () => {
             {features.map(feature => (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl bg-[#14151a] border border-[#1a1a1e] hover:border-[#f0b90b]/20 transition-all group"
+                className="p-6 rounded-2xl bg-[#14151a] border border-[#1a1a1e] hover:border-[#0ecb81]/20 transition-all group"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#f0b90b]/10 flex items-center justify-center mb-4 group-hover:bg-[#f0b90b]/20 transition-colors">
-                  <feature.icon className="w-6 h-6 text-[#f0b90b]" />
+                <div className="w-12 h-12 rounded-xl bg-[#0ecb81]/10 flex items-center justify-center mb-4 group-hover:bg-[#0ecb81]/20 transition-colors">
+                  <feature.icon className="w-6 h-6 text-[#0ecb81]" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">{feature.desc}</p>
@@ -186,7 +186,7 @@ const Index = () => {
 
       {/* CTA */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f0b90b]/5 via-transparent to-[#f0b90b]/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0ecb81]/5 via-transparent to-[#0ecb81]/5" />
         <div className="relative max-w-[1600px] mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Start Trading in Minutes
@@ -196,7 +196,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/register">
-              <Button size="lg" className="gold-gradient text-black font-bold px-10 py-6 text-base">
+              <Button size="lg" className="brand-gradient text-black font-bold px-10 py-6 text-base">
                 Create Free Account <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
@@ -209,7 +209,7 @@ const Index = () => {
               { step: "03", title: "Start Trading", desc: "Trade spot, futures, and more with ultra-low fees" },
             ].map(item => (
               <div key={item.step} className="text-center">
-                <div className="text-3xl font-black gold-text mb-2">{item.step}</div>
+                <div className="text-3xl font-black brand-text mb-2">{item.step}</div>
                 <h3 className="font-semibold text-white mb-1">{item.title}</h3>
                 <p className="text-sm text-gray-500">{item.desc}</p>
               </div>
