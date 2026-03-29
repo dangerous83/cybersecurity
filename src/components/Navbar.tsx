@@ -56,9 +56,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
             <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
-              K
+              A
             </div>
-            <span className="text-xl font-bold brand-text hidden sm:block font-heading">KORYPTO</span>
+            <span className="text-xl font-bold brand-text hidden sm:block font-heading">ALCON</span>
           </Link>
 
           {/* Desktop Nav */}

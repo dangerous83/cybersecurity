@@ -4,7 +4,7 @@ const footerSections = [
   {
     title: "About",
     links: [
-      { label: "About KORYPTO", href: "/about" },
+      { label: "About ALCON", href: "/about" },
       { label: "Careers", href: "/careers" },
       { label: "Blog", href: "/blog" },
     ],
@@ -54,13 +54,13 @@ const Footer = () => {
               <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center font-black text-black text-sm">
                 K
               </div>
-              <span className="text-lg font-bold brand-text font-heading">KORYPTO</span>
+              <span className="text-lg font-bold brand-text font-heading">ALCON</span>
             </Link>
             <p className="text-gray-500 text-sm mb-4">
               The world's leading cryptocurrency exchange platform.
             </p>
             <p className="text-gray-600 text-xs">
-              KORYPTO Pte. Ltd.<br />
+              ALCON Pte. Ltd.<br />
               1 Raffles Place, #20-61<br />
               Singapore 048616
             </p>
@@ -87,7 +87,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-[#1a1a1e] flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-600 text-sm">
-            &copy; {new Date().getFullYear()} KORYPTO. All rights reserved.
+            &copy; {new Date().getFullYear()} ALCON. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-gray-600">
             <span className="flex items-center gap-1">

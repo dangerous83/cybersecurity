@@ -5,7 +5,7 @@ import { Eye, EyeOff, Mail, Lock, Shield, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
 
-const REMEMBER_KEY = 'korypto_remember';
+const REMEMBER_KEY = 'alcon_remember';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -71,9 +71,9 @@ const Login = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
-              K
+              A
             </div>
-            <span className="text-2xl font-bold brand-text">KORYPTO</span>
+            <span className="text-2xl font-bold brand-text">ALCON</span>
           </Link>
           <h1 className="text-2xl font-bold text-white">Welcome Back</h1>
           <p className="text-gray-500 text-sm mt-1">Log in to your account to continue trading</p>
@@ -140,11 +140,11 @@ const Login = () => {
           <div className="bg-[#0ecb81]/5 border border-[#0ecb81]/20 rounded-lg p-3 text-xs text-gray-400">
             <p className="font-semibold text-[#0ecb81] mb-1.5">Demo Account Credentials</p>
             <div className="space-y-1">
-              <p><span className="text-gray-300">Email:</span> demo@korypto.com</p>
+              <p><span className="text-gray-300">Email:</span> demo@alcon.com</p>
               <p><span className="text-gray-300">Password:</span> demo123456</p>
             </div>
             <div className="border-t border-[#0ecb81]/10 mt-2 pt-2">
-              <p><span className="text-gray-300">Email:</span> alice@korypto.com</p>
+              <p><span className="text-gray-300">Email:</span> alice@alcon.com</p>
               <p><span className="text-gray-300">Password:</span> Alice1234!</p>
             </div>
           </div>

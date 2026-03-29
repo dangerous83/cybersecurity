@@ -23,7 +23,7 @@ interface FuturesPosition {
 
 const leverages = [1, 2, 5, 10, 20, 50, 75, 100, 125];
 
-const POSITIONS_KEY = 'korypto_futures_positions_';
+const POSITIONS_KEY = 'alcon_futures_positions_';
 
 function getPositions(userId: string): FuturesPosition[] {
   try {

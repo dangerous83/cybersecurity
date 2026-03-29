@@ -11,7 +11,7 @@ export interface Order {
   filledAt?: string;
 }
 
-const ORDERS_KEY = 'korypto_orders_';
+const ORDERS_KEY = 'alcon_orders_';
 
 function getOrdersFromStorage(userId: string): Order[] {
   try {

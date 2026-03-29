@@ -8,9 +8,9 @@ const About = () => (
     <section className="relative overflow-hidden border-b border-[#1a1a1e]">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#0ecb81]/5 blur-[120px] rounded-full" />
       <div className="relative max-w-[1200px] mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About <span className="brand-text">KORYPTO</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About <span className="brand-text">ALCON</span></h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-          Founded in 2024, KORYPTO is a next-generation cryptocurrency exchange built to make digital asset trading accessible, secure, and efficient for everyone — from first-time buyers to institutional traders.
+          Founded in 2024, ALCON is a next-generation cryptocurrency exchange built to make digital asset trading accessible, secure, and efficient for everyone — from first-time buyers to institutional traders.
         </p>
       </div>
     </section>

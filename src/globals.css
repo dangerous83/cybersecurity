@@ -7,25 +7,25 @@
 @layer base {
   :root {
     --background: 0 0% 7%;
-    --foreground: 200 10% 90%;
+    --foreground: 45 10% 90%;
 
     --card: 0 0% 9%;
-    --card-foreground: 200 10% 90%;
+    --card-foreground: 45 10% 90%;
 
     --popover: 0 0% 9%;
-    --popover-foreground: 200 10% 90%;
+    --popover-foreground: 45 10% 90%;
 
-    --primary: 160 84% 39%;
+    --primary: 142 76% 36%;
     --primary-foreground: 0 0% 5%;
 
     --secondary: 0 0% 13%;
-    --secondary-foreground: 200 10% 90%;
+    --secondary-foreground: 45 10% 90%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 55%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
@@ -35,18 +35,18 @@
 
     --border: 0 0% 16%;
     --input: 0 0% 16%;
-    --ring: 160 84% 39%;
+    --ring: 142 76% 36%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 200 10% 90%;
-    --sidebar-primary: 160 84% 39%;
+    --sidebar-foreground: 45 10% 90%;
+    --sidebar-primary: 142 76% 36%;
     --sidebar-primary-foreground: 0 0% 5%;
     --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 200 10% 90%;
+    --sidebar-accent-foreground: 45 10% 90%;
     --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 160 84% 39%;
+    --sidebar-ring: 142 76% 36%;
   }
 }
 
@@ -71,11 +71,11 @@
   }
 
   .brand-gradient {
-    background: linear-gradient(135deg, #0ecb81 0%, #3b82f6 50%, #06b6d4 100%);
+    background: linear-gradient(135deg, #0ecb81 0%, #d4a00a 50%, #f0b90b 100%);
   }
 
   .brand-text {
-    background: linear-gradient(135deg, #0ecb81 0%, #3b82f6 50%, #06b6d4 100%);
+    background: linear-gradient(135deg, #0ecb81 0%, #d4a00a 50%, #f0b90b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -97,7 +97,7 @@
   }
 
   .glow-brand {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(14, 203, 129, 0.08);
+    box-shadow: 0 0 20px rgba(14, 203, 129, 0.15), 0 0 40px rgba(240, 185, 11, 0.08);
   }
 
   .ticker-scroll {
@@ -107,6 +107,77 @@
   @keyframes ticker {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-fade-in-up { animation: fadeInUp 0.6s ease-out forwards; }
+  .animate-fade-in-left { animation: fadeInLeft 0.6s ease-out forwards; }
+  .animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  .animate-count-up { animation: countUp 0.8s ease-out forwards; }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(14, 203, 129, 0.12);
+  }
+
+  .hover-glow {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-glow:hover {
+    border-color: rgba(14, 203, 129, 0.3);
+    box-shadow: 0 0 20px rgba(14, 203, 129, 0.1);
+  }
+
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+  .hover-scale:hover {
+    transform: scale(1.02);
   }
 
   @keyframes pulse-green {
@@ -119,22 +190,15 @@
     50% { color: #f6465daa; }
   }
 
-  .animate-pulse-green {
-    animation: pulse-green 2s ease-in-out infinite;
-  }
+  .animate-pulse-green { animation: pulse-green 2s ease-in-out infinite; }
+  .animate-pulse-red { animation: pulse-red 2s ease-in-out infinite; }
 
-  .animate-pulse-red {
-    animation: pulse-red 2s ease-in-out infinite;
-  }
+  .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: #1a1a2e; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
 
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 4px;
-  }
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: #1a1a2e;
-  }
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 2px;
-  }
+  /* Gold accent color class */
+  .text-gold { color: #f0b90b; }
+  .bg-gold { background-color: #f0b90b; }
+  .border-gold { border-color: #f0b90b; }
 }

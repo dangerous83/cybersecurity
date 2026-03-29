@@ -16,13 +16,13 @@ const posts = [
   },
   {
     id: 3, category: "Product Update", date: "Mar 22, 2026", readTime: "3 min",
-    title: "KORYPTO Launches Perpetual Futures with Up to 125x Leverage",
+    title: "ALCON Launches Perpetual Futures with Up to 125x Leverage",
     excerpt: "Trade BTC, ETH, SOL, and 20+ perpetual contracts with cross and isolated margin modes. Industry-leading liquidation engine for maximum capital efficiency.",
     featured: false,
   },
   {
     id: 4, category: "Security", date: "Mar 20, 2026", readTime: "6 min",
-    title: "How KORYPTO Keeps Your Assets Safe: Our Security Architecture",
+    title: "How ALCON Keeps Your Assets Safe: Our Security Architecture",
     excerpt: "A deep dive into our multi-tier security system including cold storage, MPC wallets, real-time monitoring, and our $500M insurance fund.",
     featured: false,
   },
@@ -35,7 +35,7 @@ const posts = [
   {
     id: 6, category: "Education", date: "Mar 15, 2026", readTime: "10 min",
     title: "Understanding Order Types: Market, Limit, Stop-Limit Explained",
-    excerpt: "Master every order type available on KORYPTO. From basic market orders to advanced stop-limit strategies, this guide covers everything.",
+    excerpt: "Master every order type available on ALCON. From basic market orders to advanced stop-limit strategies, this guide covers everything.",
     featured: false,
   },
   {
@@ -58,7 +58,7 @@ const Blog = () => (
   <div className="min-h-screen bg-[#0b0b0e]">
     <section className="border-b border-[#1a1a1e]">
       <div className="max-w-[1200px] mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-white mb-3">KORYPTO <span className="brand-text">Blog</span></h1>
+        <h1 className="text-4xl font-bold text-white mb-3">ALCON <span className="brand-text">Blog</span></h1>
         <p className="text-gray-400">Market insights, product updates, educational guides, and industry news.</p>
       </div>
     </section>

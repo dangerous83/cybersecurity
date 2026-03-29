@@ -24,12 +24,12 @@ const AuthContext = createContext<AuthContextType>({
 });
 
 const DEMO_ACCOUNTS = [
-  { id: 'demo-1', email: 'demo@korypto.com', password: 'demo123456', name: 'Demo Trader', createdAt: '2024-01-15T00:00:00Z' },
-  { id: 'demo-2', email: 'alice@korypto.com', password: 'Alice1234!', name: 'Alice Chen', createdAt: '2024-03-20T00:00:00Z' },
+  { id: 'demo-1', email: 'demo@alcon.com', password: 'demo123456', name: 'Demo Trader', createdAt: '2024-01-15T00:00:00Z' },
+  { id: 'demo-2', email: 'alice@alcon.com', password: 'Alice1234!', name: 'Alice Chen', createdAt: '2024-03-20T00:00:00Z' },
 ];
 
-const STORAGE_KEY = 'korypto_auth';
-const USERS_KEY = 'korypto_users';
+const STORAGE_KEY = 'alcon_auth';
+const USERS_KEY = 'alcon_users';
 
 function getStoredUsers(): Array<{ id: string; email: string; password: string; name: string; createdAt: string }> {
   try {

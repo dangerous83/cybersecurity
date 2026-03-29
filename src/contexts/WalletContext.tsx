@@ -34,8 +34,8 @@ const WalletContext = createContext<WalletContextType>({
   getPortfolioValue: () => 0,
 });
 
-const WALLET_KEY = 'korypto_wallet_';
-const TX_KEY = 'korypto_tx_';
+const WALLET_KEY = 'alcon_wallet_';
+const TX_KEY = 'alcon_tx_';
 
 const DEFAULT_BALANCES: WalletBalances = {
   USDT: 10000,

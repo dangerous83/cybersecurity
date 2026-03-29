@@ -20,7 +20,7 @@ interface ActiveStake {
   earned: number;
 }
 
-const STAKES_KEY = 'korypto_stakes_';
+const STAKES_KEY = 'alcon_stakes_';
 
 function getStakes(userId: string): ActiveStake[] {
   try {
@@ -374,10 +374,10 @@ const Earn = () => {
 
       {/* How it works */}
       <section className="max-w-[1600px] mx-auto px-4 py-16 border-t border-[#1a1a1e]">
-        <h2 className="text-2xl font-bold text-white text-center mb-12">How KORYPTO Earn Works</h2>
+        <h2 className="text-2xl font-bold text-white text-center mb-12">How ALCON Earn Works</h2>
         <div className="grid sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {[
-            { icon: Wallet, step: "1", title: "Deposit", desc: "Transfer crypto to your KORYPTO wallet" },
+            { icon: Wallet, step: "1", title: "Deposit", desc: "Transfer crypto to your ALCON wallet" },
             { icon: Lock, step: "2", title: "Subscribe", desc: "Choose a product and lock your assets" },
             { icon: TrendingUp, step: "3", title: "Earn", desc: "Receive daily rewards automatically" },
           ].map(item => (

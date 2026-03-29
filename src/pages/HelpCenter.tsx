@@ -3,7 +3,7 @@ import { Search, ChevronDown, ChevronRight, MessageCircle, Mail, FileText, Shiel
 
 const categories = [
   { icon: User, title: "Account & Security", articles: [
-    { q: "How do I create a KORYPTO account?", a: "Visit the Register page, enter your email address and create a strong password. You'll receive a confirmation email to verify your account. Once verified, you can start trading immediately with a demo balance of $10,000 USDT." },
+    { q: "How do I create a ALCON account?", a: "Visit the Register page, enter your email address and create a strong password. You'll receive a confirmation email to verify your account. Once verified, you can start trading immediately with a demo balance of $10,000 USDT." },
     { q: "How do I enable Two-Factor Authentication (2FA)?", a: "Go to Settings > Security > Two-Factor Authentication. You can set up 2FA using Google Authenticator or SMS verification. We strongly recommend enabling 2FA to protect your account from unauthorized access." },
     { q: "I forgot my password. How do I reset it?", a: "Click 'Forgot Password' on the login page. Enter your registered email address and we'll send you a password reset link. The link expires in 30 minutes for security. If you don't receive the email, check your spam folder." },
     { q: "How do I verify my identity (KYC)?", a: "Navigate to Settings > Identity Verification. You'll need to provide a government-issued photo ID (passport, driver's license, or national ID) and a selfie for facial verification. Verification typically completes within 24 hours." },
@@ -15,21 +15,21 @@ const categories = [
     { q: "Why is my withdrawal pending?", a: "Withdrawals go through a security review process. Large withdrawals or those flagged by our risk system may require manual review. This typically takes 1-12 hours. If your withdrawal has been pending for more than 24 hours, contact support." },
   ]},
   { icon: ArrowLeftRight, title: "Trading", articles: [
-    { q: "What order types are available?", a: "KORYPTO supports Market Orders (execute immediately at best price), Limit Orders (execute at your specified price or better), and Stop-Limit Orders (trigger a limit order when price reaches your stop price). Futures trading also supports Take Profit and Stop Loss orders." },
+    { q: "What order types are available?", a: "ALCON supports Market Orders (execute immediately at best price), Limit Orders (execute at your specified price or better), and Stop-Limit Orders (trigger a limit order when price reaches your stop price). Futures trading also supports Take Profit and Stop Loss orders." },
     { q: "What are the trading fees?", a: "Spot trading: Maker 0.10%, Taker 0.10%. Futures: Maker 0.02%, Taker 0.04%. VIP tiers offer progressively lower fees based on 30-day trading volume. BNB holders receive a 25% discount on all fees." },
     { q: "How does the Convert feature work?", a: "Convert allows you to instantly swap one cryptocurrency for another at the current market rate with zero slippage. Go to Convert, select your source and destination coins, enter the amount, and confirm. The conversion is executed instantly." },
-    { q: "What is the maximum leverage for futures?", a: "KORYPTO Futures offers up to 125x leverage on BTC/USDT and ETH/USDT perpetual contracts. Other pairs support up to 75x or 50x leverage depending on the asset. Higher leverage means higher risk — always use proper risk management." },
+    { q: "What is the maximum leverage for futures?", a: "ALCON Futures offers up to 125x leverage on BTC/USDT and ETH/USDT perpetual contracts. Other pairs support up to 75x or 50x leverage depending on the asset. Higher leverage means higher risk — always use proper risk management." },
   ]},
   { icon: BarChart3, title: "Earn & Staking", articles: [
-    { q: "How does KORYPTO Earn work?", a: "KORYPTO Earn lets you earn passive income on your crypto holdings. Choose from Flexible Savings (withdraw anytime), Locked Staking (higher APY, fixed term), or DeFi Staking (highest returns, smart contract risk). Interest is calculated daily and distributed to your wallet." },
+    { q: "How does ALCON Earn work?", a: "ALCON Earn lets you earn passive income on your crypto holdings. Choose from Flexible Savings (withdraw anytime), Locked Staking (higher APY, fixed term), or DeFi Staking (highest returns, smart contract risk). Interest is calculated daily and distributed to your wallet." },
     { q: "What is the minimum staking amount?", a: "Minimum amounts vary by product: Flexible Savings starts at $10, Locked Staking at $100, and DeFi Staking at $50. Each product has specific minimum and maximum subscription amounts listed on the product page." },
     { q: "Can I unstake early from Locked Staking?", a: "Yes, you can unstake early, but you may forfeit some or all of the accrued rewards depending on the product terms. Flexible savings can be withdrawn at any time without penalty." },
     { q: "How is APY calculated?", a: "APY (Annual Percentage Yield) includes compound interest. The displayed APY is an estimate based on current market conditions and may fluctuate. Actual returns depend on network rewards, market conditions, and the specific staking protocol." },
   ]},
   { icon: Shield, title: "Security", articles: [
-    { q: "Is KORYPTO safe to use?", a: "KORYPTO employs bank-grade security measures including: cold storage for 95% of assets, multi-signature wallets, real-time transaction monitoring, DDoS protection, and regular third-party security audits. We also maintain a $500M insurance fund (SAFU) to protect users." },
-    { q: "What should I do if I suspect unauthorized access?", a: "Immediately: 1) Change your password, 2) Enable/reset 2FA, 3) Check your API keys and delete any you don't recognize, 4) Review your withdrawal whitelist, 5) Contact our security team at security@korypto.com. We can temporarily freeze your account if needed." },
-    { q: "How does KORYPTO store my funds?", a: "95% of all user funds are stored in air-gapped cold storage using multi-signature wallets requiring 3-of-5 key holders to authorize any transaction. Only 5% is kept in hot wallets for instant withdrawal processing, protected by our insurance fund." },
+    { q: "Is ALCON safe to use?", a: "ALCON employs bank-grade security measures including: cold storage for 95% of assets, multi-signature wallets, real-time transaction monitoring, DDoS protection, and regular third-party security audits. We also maintain a $500M insurance fund (SAFU) to protect users." },
+    { q: "What should I do if I suspect unauthorized access?", a: "Immediately: 1) Change your password, 2) Enable/reset 2FA, 3) Check your API keys and delete any you don't recognize, 4) Review your withdrawal whitelist, 5) Contact our security team at security@alcon.com. We can temporarily freeze your account if needed." },
+    { q: "How does ALCON store my funds?", a: "95% of all user funds are stored in air-gapped cold storage using multi-signature wallets requiring 3-of-5 key holders to authorize any transaction. Only 5% is kept in hot wallets for instant withdrawal processing, protected by our insurance fund." },
   ]},
 ];
 
@@ -118,7 +118,7 @@ const HelpCenter = () => {
           <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
               { icon: MessageCircle, title: "Live Chat", desc: "24/7 support, avg response < 2 min" },
-              { icon: Mail, title: "Email Support", desc: "support@korypto.com" },
+              { icon: Mail, title: "Email Support", desc: "support@alcon.com" },
               { icon: FileText, title: "Submit Ticket", desc: "For complex issues, avg 24h response" },
             ].map(item => (
               <div key={item.title} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 text-center hover:border-[#0ecb81]/20 transition-all">

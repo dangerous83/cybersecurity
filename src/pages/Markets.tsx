@@ -22,14 +22,14 @@ const Markets = () => {
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('desc');
   const [favorites, setFavorites] = useState<Set<string>>(() => {
     try {
-      const stored = localStorage.getItem('korypto_market_favorites');
+      const stored = localStorage.getItem('alcon_market_favorites');
       if (stored) return new Set(JSON.parse(stored));
     } catch {}
     return new Set<string>();
   });
 
   useEffect(() => {
-    localStorage.setItem('korypto_market_favorites', JSON.stringify([...favorites]));
+    localStorage.setItem('alcon_market_favorites', JSON.stringify([...favorites]));
   }, [favorites]);
 
   const toggleFav = (id: string) => {

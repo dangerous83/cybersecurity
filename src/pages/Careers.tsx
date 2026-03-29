@@ -18,7 +18,7 @@ const jobs = [
   { title: "Product Manager - Trading", dept: "Product", location: "Singapore", type: "Full-time", description: "Define and deliver the next generation of trading features for spot, futures, and options markets." },
   { title: "UX Designer", dept: "Product", location: "Remote", type: "Full-time", description: "Create intuitive, accessible designs that make crypto trading simple for millions of users." },
   { title: "Growth Marketing Manager", dept: "Marketing", location: "Dubai", type: "Full-time", description: "Drive user acquisition and retention through data-driven campaigns across global markets." },
-  { title: "Compliance Analyst", dept: "Legal & Compliance", location: "Singapore", type: "Full-time", description: "Navigate global regulatory frameworks and ensure KORYPTO meets all compliance requirements." },
+  { title: "Compliance Analyst", dept: "Legal & Compliance", location: "Singapore", type: "Full-time", description: "Navigate global regulatory frameworks and ensure ALCON meets all compliance requirements." },
   { title: "DevOps Engineer", dept: "Engineering", location: "Remote", type: "Full-time", description: "Maintain 99.99% uptime for our infrastructure serving millions of concurrent users globally." },
   { title: "Data Scientist", dept: "Product", location: "Remote", type: "Full-time", description: "Build ML models for fraud detection, market analysis, and personalized user experiences." },
 ];
@@ -93,7 +93,7 @@ const Careers = () => (
     {/* Perks */}
     <section className="bg-[#0a0a0d] border-y border-[#1a1a1e] py-16">
       <div className="max-w-[1200px] mx-auto px-4">
-        <h2 className="text-2xl font-bold text-white text-center mb-8">Why Work at KORYPTO</h2>
+        <h2 className="text-2xl font-bold text-white text-center mb-8">Why Work at ALCON</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {perks.map(perk => (
             <div key={perk} className="flex items-center gap-3 bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-4">

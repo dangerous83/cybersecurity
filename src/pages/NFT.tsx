@@ -2,7 +2,7 @@ import { Search, Filter, Heart } from "lucide-react";
 import { useState } from "react";
 
 const collections = [
-  { name: "Korypto Apes", floor: "2.4 ETH", volume: "12,400 ETH", items: 10000, change: "+12.5%", img: "🐵" },
+  { name: "Alcon Apes", floor: "2.4 ETH", volume: "12,400 ETH", items: 10000, change: "+12.5%", img: "🐵" },
   { name: "Crypto Punks X", floor: "45.2 ETH", volume: "890,000 ETH", items: 10000, change: "+3.2%", img: "👾" },
   { name: "Gold Chain Club", floor: "0.8 ETH", volume: "5,600 ETH", items: 5555, change: "-2.1%", img: "⛓️" },
   { name: "Digital Diamonds", floor: "1.2 ETH", volume: "8,900 ETH", items: 8888, change: "+8.7%", img: "💎" },
@@ -11,13 +11,13 @@ const collections = [
 ];
 
 const nfts = [
-  { name: "Golden Ape #4281", collection: "Korypto Apes", price: "2.8 ETH", lastSale: "2.1 ETH", rarity: "Legendary", emoji: "🐵" },
+  { name: "Golden Ape #4281", collection: "Alcon Apes", price: "2.8 ETH", lastSale: "2.1 ETH", rarity: "Legendary", emoji: "🐵" },
   { name: "Punk #9182", collection: "Crypto Punks X", price: "52.0 ETH", lastSale: "48.5 ETH", rarity: "Ultra Rare", emoji: "👾" },
   { name: "Chain #0042", collection: "Gold Chain Club", price: "1.2 ETH", lastSale: "0.9 ETH", rarity: "Rare", emoji: "⛓️" },
   { name: "Diamond #7721", collection: "Digital Diamonds", price: "1.5 ETH", lastSale: "1.1 ETH", rarity: "Epic", emoji: "💎" },
   { name: "Kingdom #3301", collection: "Meta Kingdoms", price: "0.7 ETH", lastSale: "0.5 ETH", rarity: "Rare", emoji: "🏰" },
   { name: "Samurai #1337", collection: "Neon Samurai", price: "4.2 ETH", lastSale: "3.5 ETH", rarity: "Legendary", emoji: "⚔️" },
-  { name: "Golden Ape #8192", collection: "Korypto Apes", price: "3.5 ETH", lastSale: "2.8 ETH", rarity: "Mythic", emoji: "🐵" },
+  { name: "Golden Ape #8192", collection: "Alcon Apes", price: "3.5 ETH", lastSale: "2.8 ETH", rarity: "Mythic", emoji: "🐵" },
   { name: "Punk #2048", collection: "Crypto Punks X", price: "47.8 ETH", lastSale: "44.0 ETH", rarity: "Rare", emoji: "👾" },
 ];
 
@@ -40,7 +40,7 @@ const NFT = () => {
         <div className="absolute top-0 right-1/4 w-[400px] h-[300px] bg-[#0ecb81]/5 blur-[100px] rounded-full" />
         <div className="relative max-w-[1600px] mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            KORYPTO <span className="brand-text">NFT Marketplace</span>
+            ALCON <span className="brand-text">NFT Marketplace</span>
           </h1>
           <p className="text-gray-400 max-w-xl mx-auto mb-8">
             Discover, collect, and trade extraordinary NFTs on the largest crypto marketplace.

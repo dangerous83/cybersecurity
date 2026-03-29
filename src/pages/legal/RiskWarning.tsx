@@ -27,10 +27,10 @@ const RiskWarning = () => (
         { title: "Leverage & Futures Risk", content: "Trading futures with leverage amplifies both potential profits and losses. With 100x leverage, a 1% price movement against your position results in a 100% loss of your margin. Liquidation can occur rapidly in volatile markets, resulting in complete loss of your margin deposit. You may lose more than your initial investment." },
         { title: "Liquidity Risk", content: "Some cryptocurrencies may have limited trading volume, resulting in wider spreads and difficulty executing large orders. During market stress events, liquidity can evaporate quickly, leading to significant slippage on market orders." },
         { title: "Technology & Security Risk", content: "Despite our security measures, no system is 100% immune to cyberattacks, software bugs, or infrastructure failures. Blockchain networks may experience congestion, forks, or protocol changes that affect your assets. Smart contract bugs in DeFi protocols could result in loss of staked funds." },
-        { title: "Regulatory Risk", content: "Cryptocurrency regulations vary by jurisdiction and are rapidly evolving. Changes in law or regulation may adversely affect the use, transfer, exchange, or value of your crypto assets. KORYPTO may be required to restrict services in certain jurisdictions without prior notice." },
+        { title: "Regulatory Risk", content: "Cryptocurrency regulations vary by jurisdiction and are rapidly evolving. Changes in law or regulation may adversely affect the use, transfer, exchange, or value of your crypto assets. ALCON may be required to restrict services in certain jurisdictions without prior notice." },
         { title: "Staking & Earn Risk", content: "Staking and earn products involve locking your assets for a period of time. During this period, you may be unable to sell your assets if market conditions change. Advertised APY rates are estimates and may fluctuate. DeFi staking involves additional smart contract risk. Validator slashing may result in loss of staked assets." },
         { title: "Tax Implications", content: "Cryptocurrency transactions may be subject to capital gains tax, income tax, or other taxes in your jurisdiction. You are solely responsible for determining and fulfilling your tax obligations. We recommend consulting a qualified tax professional." },
-        { title: "No Financial Advice", content: "KORYPTO does not provide financial, investment, legal, or tax advice. All trading decisions are made at your own discretion and risk. Any market analysis, educational content, or information provided by KORYPTO is for informational purposes only and should not be construed as advice." },
+        { title: "No Financial Advice", content: "ALCON does not provide financial, investment, legal, or tax advice. All trading decisions are made at your own discretion and risk. Any market analysis, educational content, or information provided by ALCON is for informational purposes only and should not be construed as advice." },
       ].map(section => (
         <div key={section.title}>
           <h2 className="text-lg font-semibold text-white mb-2">{section.title}</h2>
@@ -39,7 +39,7 @@ const RiskWarning = () => (
       ))}
       <div className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-6 mt-8">
         <p className="text-sm text-gray-400 leading-relaxed">
-          By using KORYPTO, you acknowledge that you have read, understood, and accept the risks described above. You confirm that you are trading with funds you can afford to lose and that you will not hold KORYPTO responsible for any trading losses.
+          By using ALCON, you acknowledge that you have read, understood, and accept the risks described above. You confirm that you are trading with funds you can afford to lose and that you will not hold ALCON responsible for any trading losses.
         </p>
       </div>
     </section>

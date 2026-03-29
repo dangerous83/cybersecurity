@@ -41,7 +41,7 @@ const Register = () => {
     setTimeout(() => {
       const result = register(email, password, name);
       if (result.success) {
-        toast.success("Account created successfully! Welcome to KORYPTO.");
+        toast.success("Account created successfully! Welcome to ALCON.");
         navigate("/trade");
       } else {
         setError(result.error || "Registration failed");
@@ -56,9 +56,9 @@ const Register = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-10 h-10 brand-gradient rounded-xl flex items-center justify-center font-black text-black text-lg">
-              K
+              A
             </div>
-            <span className="text-2xl font-bold brand-text">KORYPTO</span>
+            <span className="text-2xl font-bold brand-text">ALCON</span>
           </Link>
           <h1 className="text-2xl font-bold text-white">Create Account</h1>
           <p className="text-gray-500 text-sm mt-1">Start trading crypto in minutes</p>
