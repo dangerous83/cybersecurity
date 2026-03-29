@@ -69,7 +69,7 @@ const Navbar = () => {
                 to={link.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   isActive(link.href)
-                    ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                    ? "text-[#3b82f6] bg-[#3b82f6]/10"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -82,7 +82,7 @@ const Navbar = () => {
                   to="/wallet"
                   className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive("/wallet")
-                      ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                      ? "text-[#3b82f6] bg-[#3b82f6]/10"
                       : "text-gray-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -92,7 +92,7 @@ const Navbar = () => {
                   to="/convert"
                   className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                     isActive("/convert")
-                      ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                      ? "text-[#3b82f6] bg-[#3b82f6]/10"
                       : "text-gray-300 hover:text-white hover:bg-white/5"
                   }`}
                 >
@@ -109,7 +109,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search coins..."
-                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#0ecb81]/50 transition-colors"
+                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3b82f6]/50 transition-colors"
               />
             </div>
           </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
               <>
                 {/* Balance Preview */}
                 <Link to="/wallet" className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#1a1a1e] hover:bg-[#222] transition-colors">
-                  <Wallet className="w-4 h-4 text-[#0ecb81]" />
+                  <Wallet className="w-4 h-4 text-[#3b82f6]" />
                   <span className="text-sm text-white font-medium">${formatPrice(portfolioValue)}</span>
                 </Link>
               </>
@@ -230,7 +230,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search coins..."
-                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#0ecb81]/50"
+                className="w-full bg-[#1e1e22] border border-[#2a2a2e] rounded-lg pl-9 pr-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:border-[#3b82f6]/50"
               />
             </div>
             {navLinks.map(link => (
@@ -240,7 +240,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className={`block px-3 py-2.5 text-sm font-medium rounded-lg ${
                   isActive(link.href)
-                    ? "text-[#0ecb81] bg-[#3b82f6]/10"
+                    ? "text-[#3b82f6] bg-[#3b82f6]/10"
                     : "text-gray-300 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -261,7 +261,7 @@ const Navbar = () => {
               {!isAuthenticated ? (
                 <>
                   <Link to="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-                    <Button variant="outline" className="w-full border-[#0ecb81] text-[#0ecb81]">
+                    <Button variant="outline" className="w-full border-[#3b82f6] text-[#3b82f6]">
                       Log In
                     </Button>
                   </Link>

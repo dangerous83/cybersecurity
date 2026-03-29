@@ -68,7 +68,7 @@ const HelpCenter = () => {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Search for answers..."
-              className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-12 pr-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#0ecb81]/50"
+              className="w-full bg-[#14151a] border border-[#1a1a1e] rounded-xl pl-12 pr-4 py-3.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#3b82f6]/50"
             />
           </div>
         </div>
@@ -79,8 +79,8 @@ const HelpCenter = () => {
           {filtered.map(cat => (
             <div key={cat.title}>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-[#0ecb81]/10 flex items-center justify-center">
-                  <cat.icon className="w-5 h-5 text-[#0ecb81]" />
+                <div className="w-10 h-10 rounded-xl bg-[#3b82f6]/10 flex items-center justify-center">
+                  <cat.icon className="w-5 h-5 text-[#3b82f6]" />
                 </div>
                 <h2 className="text-xl font-bold text-white">{cat.title}</h2>
               </div>
@@ -121,8 +121,8 @@ const HelpCenter = () => {
               { icon: Mail, title: "Email Support", desc: "support@alcon.com" },
               { icon: FileText, title: "Submit Ticket", desc: "For complex issues, avg 24h response" },
             ].map(item => (
-              <div key={item.title} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 text-center hover:border-[#0ecb81]/20 transition-all">
-                <item.icon className="w-6 h-6 text-[#0ecb81] mx-auto mb-2" />
+              <div key={item.title} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 text-center hover:border-[#3b82f6]/20 transition-all">
+                <item.icon className="w-6 h-6 text-[#3b82f6] mx-auto mb-2" />
                 <h3 className="font-semibold text-white text-sm">{item.title}</h3>
                 <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
               </div>

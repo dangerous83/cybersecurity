@@ -68,7 +68,7 @@ const Blog = () => (
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="flex gap-1 overflow-x-auto py-3">
           {categories.map((cat, i) => (
-            <button key={cat} className={`px-4 py-1.5 text-sm rounded-lg whitespace-nowrap ${i === 0 ? 'bg-[#0ecb81]/10 text-[#0ecb81]' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
+            <button key={cat} className={`px-4 py-1.5 text-sm rounded-lg whitespace-nowrap ${i === 0 ? 'bg-[#3b82f6]/10 text-[#3b82f6]' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
               {cat}
             </button>
           ))}
@@ -80,19 +80,19 @@ const Blog = () => (
     <section className="max-w-[1200px] mx-auto px-4 py-12">
       <div className="grid md:grid-cols-2 gap-6 mb-12">
         {posts.filter(p => p.featured).map(post => (
-          <div key={post.id} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl overflow-hidden hover:border-[#0ecb81]/20 transition-all group">
+          <div key={post.id} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl overflow-hidden hover:border-[#3b82f6]/20 transition-all group">
             <div className="h-48 bg-gradient-to-br from-[#0ecb81]/10 to-[#3b82f6]/10 flex items-center justify-center">
               <span className="text-5xl opacity-30">📰</span>
             </div>
             <div className="p-6">
               <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-                <span className="px-2 py-0.5 rounded-full bg-[#0ecb81]/10 text-[#0ecb81]">{post.category}</span>
+                <span className="px-2 py-0.5 rounded-full bg-[#3b82f6]/10 text-[#3b82f6]">{post.category}</span>
                 <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{post.date}</span>
                 <span>{post.readTime} read</span>
               </div>
-              <h2 className="text-xl font-bold text-white mb-2 group-hover:text-[#0ecb81] transition-colors">{post.title}</h2>
+              <h2 className="text-xl font-bold text-white mb-2 group-hover:text-[#60a5fa] transition-colors">{post.title}</h2>
               <p className="text-sm text-gray-400 leading-relaxed">{post.excerpt}</p>
-              <button className="text-[#0ecb81] text-sm font-medium mt-4 flex items-center gap-1 hover:underline">Read More <ArrowRight className="w-4 h-4" /></button>
+              <button className="text-[#3b82f6] text-sm font-medium mt-4 flex items-center gap-1 hover:underline">Read More <ArrowRight className="w-4 h-4" /></button>
             </div>
           </div>
         ))}
@@ -102,14 +102,14 @@ const Blog = () => (
       <h2 className="text-xl font-bold text-white mb-6">Latest Articles</h2>
       <div className="space-y-4">
         {posts.filter(p => !p.featured).map(post => (
-          <div key={post.id} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 hover:border-[#0ecb81]/20 transition-all group flex flex-col md:flex-row gap-4">
+          <div key={post.id} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 hover:border-[#3b82f6]/20 transition-all group flex flex-col md:flex-row gap-4">
             <div className="flex-1">
               <div className="flex items-center gap-3 text-xs text-gray-500 mb-2">
                 <span className="px-2 py-0.5 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] flex items-center gap-1"><Tag className="w-3 h-3" />{post.category}</span>
                 <span>{post.date}</span>
                 <span>{post.readTime} read</span>
               </div>
-              <h3 className="font-semibold text-white text-lg group-hover:text-[#0ecb81] transition-colors">{post.title}</h3>
+              <h3 className="font-semibold text-white text-lg group-hover:text-[#60a5fa] transition-colors">{post.title}</h3>
               <p className="text-sm text-gray-400 mt-1">{post.excerpt}</p>
             </div>
           </div>

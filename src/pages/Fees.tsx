@@ -67,7 +67,7 @@ const Fees = () => (
       <div className="max-w-[1200px] mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-white mb-3">Fee <span className="brand-text">Schedule</span></h1>
         <p className="text-gray-400 max-w-2xl">Transparent, competitive fees with VIP tiers for high-volume traders. All fees are calculated on a 30-day rolling volume basis.</p>
-        <div className="flex items-center gap-2 mt-4 text-sm text-[#0ecb81] bg-[#0ecb81]/10 px-4 py-2 rounded-lg w-fit">
+        <div className="flex items-center gap-2 mt-4 text-sm text-[#3b82f6] bg-[#3b82f6]/10 px-4 py-2 rounded-lg w-fit">
           <Info className="w-4 h-4" />
           Pay with KRP token for 25% discount on all trading fees
         </div>
@@ -77,9 +77,9 @@ const Fees = () => (
     <section className="max-w-[1200px] mx-auto px-4 py-12">
       <Tabs defaultValue="spot">
         <TabsList className="bg-[#1a1a1e] mb-8">
-          <TabsTrigger value="spot" className="data-[state=active]:bg-[#0ecb81] data-[state=active]:text-black">Spot Trading</TabsTrigger>
-          <TabsTrigger value="futures" className="data-[state=active]:bg-[#0ecb81] data-[state=active]:text-black">Futures Trading</TabsTrigger>
-          <TabsTrigger value="withdrawal" className="data-[state=active]:bg-[#0ecb81] data-[state=active]:text-black">Withdrawals</TabsTrigger>
+          <TabsTrigger value="spot" className="data-[state=active]:bg-[#3b82f6] data-[state=active]:text-black">Spot Trading</TabsTrigger>
+          <TabsTrigger value="futures" className="data-[state=active]:bg-[#3b82f6] data-[state=active]:text-black">Futures Trading</TabsTrigger>
+          <TabsTrigger value="withdrawal" className="data-[state=active]:bg-[#3b82f6] data-[state=active]:text-black">Withdrawals</TabsTrigger>
         </TabsList>
 
         <TabsContent value="spot">

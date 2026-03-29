@@ -69,13 +69,13 @@ const MarketTable = ({ assets, compact = false }: MarketTableProps) => {
             <tr key={asset.id} className="border-b border-[#1a1a1e]/50 hover:bg-white/[0.02] transition-colors">
               <td className="py-3 px-3">
                 <button onClick={() => toggleFav(asset.id)}>
-                  <Star className={`w-4 h-4 ${favorites.has(asset.id) ? 'fill-[#0ecb81] text-[#0ecb81]' : 'text-gray-600'}`} />
+                  <Star className={`w-4 h-4 ${favorites.has(asset.id) ? 'fill-[#0ecb81] text-[#3b82f6]' : 'text-gray-600'}`} />
                 </button>
               </td>
               <td className="py-3 px-3 text-gray-500">{idx + 1}</td>
               <td className="py-3 px-3">
                 <Link to={`/trade?pair=${asset.symbol}`} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#1a1a1e] flex items-center justify-center text-sm font-bold text-[#0ecb81]">
+                  <div className="w-8 h-8 rounded-full bg-[#1a1a1e] flex items-center justify-center text-sm font-bold text-[#3b82f6]">
                     {asset.icon}
                   </div>
                   <div>
@@ -90,7 +90,7 @@ const MarketTable = ({ assets, compact = false }: MarketTableProps) => {
               <td className="py-3 px-3 text-right">
                 <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium ${
                   asset.changePercent24h >= 0
-                    ? 'text-[#0ecb81] bg-[#0ecb81]/10'
+                    ? 'text-[#3b82f6] bg-[#3b82f6]/10'
                     : 'text-[#f6465d] bg-[#f6465d]/10'
                 }`}>
                   {asset.changePercent24h >= 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
@@ -116,7 +116,7 @@ const MarketTable = ({ assets, compact = false }: MarketTableProps) => {
               <td className="py-3 px-3 text-right">
                 <Link
                   to={`/trade?pair=${asset.symbol}`}
-                  className="px-3 py-1 text-xs font-medium rounded-md bg-[#0ecb81]/10 text-[#0ecb81] hover:bg-[#0ecb81]/20 transition-colors"
+                  className="px-3 py-1 text-xs font-medium rounded-md bg-[#3b82f6]/10 text-[#3b82f6] hover:bg-[#3b82f6]/20 transition-colors"
                 >
                   Trade
                 </Link>

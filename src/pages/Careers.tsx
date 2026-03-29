@@ -44,9 +44,9 @@ const Careers = () => (
           Join a world-class team of engineers, designers, and business leaders building the most trusted crypto exchange on the planet.
         </p>
         <div className="flex items-center justify-center gap-6 text-sm text-gray-400">
-          <span className="flex items-center gap-1"><Users className="w-4 h-4 text-[#0ecb81]" /> 350+ Team Members</span>
-          <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-[#0ecb81]" /> 40+ Countries</span>
-          <span className="flex items-center gap-1"><Briefcase className="w-4 h-4 text-[#0ecb81]" /> {jobs.length} Open Roles</span>
+          <span className="flex items-center gap-1"><Users className="w-4 h-4 text-[#3b82f6]" /> 350+ Team Members</span>
+          <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-[#3b82f6]" /> 40+ Countries</span>
+          <span className="flex items-center gap-1"><Briefcase className="w-4 h-4 text-[#3b82f6]" /> {jobs.length} Open Roles</span>
         </div>
       </div>
     </section>
@@ -56,8 +56,8 @@ const Careers = () => (
       <h2 className="text-2xl font-bold text-white mb-6">Departments</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {departments.map(d => (
-          <div key={d.name} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-4 text-center hover:border-[#0ecb81]/20 transition-all">
-            <d.icon className="w-6 h-6 text-[#0ecb81] mx-auto mb-2" />
+          <div key={d.name} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-4 text-center hover:border-[#3b82f6]/20 transition-all">
+            <d.icon className="w-6 h-6 text-[#3b82f6] mx-auto mb-2" />
             <div className="text-sm font-semibold text-white">{d.name}</div>
             <div className="text-xs text-gray-500">{d.count} openings</div>
           </div>
@@ -70,10 +70,10 @@ const Careers = () => (
       <h2 className="text-2xl font-bold text-white mb-6">Open Positions</h2>
       <div className="space-y-3">
         {jobs.map((job, i) => (
-          <div key={i} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 hover:border-[#0ecb81]/20 transition-all group">
+          <div key={i} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-5 hover:border-[#3b82f6]/20 transition-all group">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="flex-1">
-                <h3 className="font-semibold text-white text-lg group-hover:text-[#0ecb81] transition-colors">{job.title}</h3>
+                <h3 className="font-semibold text-white text-lg group-hover:text-[#60a5fa] transition-colors">{job.title}</h3>
                 <p className="text-sm text-gray-400 mt-1">{job.description}</p>
                 <div className="flex flex-wrap gap-3 mt-3">
                   <span className="text-xs px-2.5 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6]">{job.dept}</span>
@@ -81,7 +81,7 @@ const Careers = () => (
                   <span className="text-xs px-2.5 py-1 rounded-full bg-[#1a1a1e] text-gray-400 flex items-center gap-1"><Clock className="w-3 h-3" />{job.type}</span>
                 </div>
               </div>
-              <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-[#0ecb81]/10 hover:text-[#0ecb81] hover:border-[#0ecb81]/30 shrink-0">
+              <Button variant="outline" className="border-[#2a2a2e] text-white hover:bg-[#3b82f6]/10 hover:text-[#60a5fa] hover:border-[#3b82f6]/30 shrink-0">
                 Apply Now <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </div>
@@ -97,7 +97,7 @@ const Careers = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {perks.map(perk => (
             <div key={perk} className="flex items-center gap-3 bg-[#0d0d10] border border-[#1a1a1e] rounded-xl p-4">
-              <div className="w-2 h-2 rounded-full bg-[#0ecb81] shrink-0" />
+              <div className="w-2 h-2 rounded-full bg-[#3b82f6] shrink-0" />
               <span className="text-sm text-gray-300">{perk}</span>
             </div>
           ))}

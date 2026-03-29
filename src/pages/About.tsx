@@ -6,7 +6,7 @@ const About = () => (
   <div className="min-h-screen bg-[#0b0b0e]">
     {/* Hero */}
     <section className="relative overflow-hidden border-b border-[#1a1a1e]">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#0ecb81]/5 blur-[120px] rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#3b82f6]/5 blur-[120px] rounded-full" />
       <div className="relative max-w-[1200px] mx-auto px-4 py-20 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About <span className="brand-text">ALCON</span></h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
@@ -35,7 +35,7 @@ const About = () => (
             { icon: Lock, value: "$12.8B", label: "Assets Secured" },
           ].map(stat => (
             <div key={stat.label} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl p-5 text-center">
-              <stat.icon className="w-6 h-6 text-[#0ecb81] mx-auto mb-2" />
+              <stat.icon className="w-6 h-6 text-[#3b82f6] mx-auto mb-2" />
               <div className="text-2xl font-bold text-white">{stat.value}</div>
               <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
             </div>
@@ -56,8 +56,8 @@ const About = () => (
             { icon: Award, title: "Transparency", desc: "Open communication, published proof-of-reserves, and regular security audits. We earn trust through actions, not words." },
           ].map(v => (
             <div key={v.title} className="bg-[#0d0d10] border border-[#1a1a1e] rounded-2xl p-6">
-              <div className="w-12 h-12 rounded-xl bg-[#0ecb81]/10 flex items-center justify-center mb-4">
-                <v.icon className="w-6 h-6 text-[#0ecb81]" />
+              <div className="w-12 h-12 rounded-xl bg-[#3b82f6]/10 flex items-center justify-center mb-4">
+                <v.icon className="w-6 h-6 text-[#3b82f6]" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">{v.title}</h3>
               <p className="text-sm text-gray-400 leading-relaxed">{v.desc}</p>
@@ -83,7 +83,7 @@ const About = () => (
               {person.name.split(' ').map(n => n[0]).join('')}
             </div>
             <h3 className="font-semibold text-white">{person.name}</h3>
-            <p className="text-sm text-[#0ecb81]">{person.role}</p>
+            <p className="text-sm text-[#3b82f6]">{person.role}</p>
             <p className="text-xs text-gray-500 mt-1">{person.bg}</p>
           </div>
         ))}

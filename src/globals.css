@@ -15,16 +15,16 @@
     --popover: 0 0% 9%;
     --popover-foreground: 45 10% 90%;
 
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 5%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 13%;
-    --secondary-foreground: 45 10% 90%;
+    --secondary-foreground: 210 10% 90%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 55%;
 
-    --accent: 43 96% 56%;
+    --accent: 160 84% 39%;
     --accent-foreground: 0 0% 5%;
 
     --destructive: 0 72% 51%;
@@ -35,7 +35,7 @@
 
     --border: 0 0% 16%;
     --input: 0 0% 16%;
-    --ring: 142 76% 36%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
@@ -71,23 +71,23 @@
   }
 
   .brand-gradient {
-    background: linear-gradient(135deg, #0ecb81 0%, #d4a00a 50%, #f0b90b 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 40%, #0ecb81 100%);
   }
 
   .brand-text {
-    background: linear-gradient(135deg, #0ecb81 0%, #d4a00a 50%, #f0b90b 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 40%, #0ecb81 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .brand-border {
-    border-color: #0ecb81;
+    border-color: #3b82f6;
   }
 
   .card-dark {
     background: rgba(20, 21, 26, 0.95);
-    border: 1px solid rgba(14, 203, 129, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
   }
 
   .glass-dark {
@@ -97,7 +97,7 @@
   }
 
   .glow-brand {
-    box-shadow: 0 0 20px rgba(14, 203, 129, 0.15), 0 0 40px rgba(240, 185, 11, 0.08);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(14, 203, 129, 0.08);
   }
 
   .ticker-scroll {
