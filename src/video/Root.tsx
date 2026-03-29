@@ -1,4 +1,4 @@
-import { Composition } from "remotion";
+import { Composition, registerRoot } from "remotion";
 import {
   ItsecPromo,
   ITSEC_PROMO_DURATION,
@@ -7,7 +7,7 @@ import {
   ITSEC_PROMO_WIDTH,
 } from "./ItsecPromo";
 
-export const RemotionRoot: React.FC = () => {
+const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
@@ -21,3 +21,5 @@ export const RemotionRoot: React.FC = () => {
     </>
   );
 };
+
+registerRoot(RemotionRoot);
