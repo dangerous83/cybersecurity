@@ -26,6 +26,7 @@ import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
 import RiskWarning from "./pages/legal/RiskWarning";
 import NotFound from "./pages/NotFound";
+import VideoPreview from "./pages/VideoPreview";
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => (
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/terms" element={<Terms />} />
                   <Route path="/risk-warning" element={<RiskWarning />} />
+                  <Route path="/video" element={<VideoPreview />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Layout>
